@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="account-service" />
+        <module name="bank-application" />
+        <module name="netflix-eurkea-namingserver" />
+        <module name="netflix-zuul-gateway" />
+        <module name="user-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="account-service" target="1.8" />
+      <module name="bank-application" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="netflix-eurkea-namingserver" target="1.8" />
+      <module name="netflix-zuul-gateway" target="1.8" />
+      <module name="user-service" target="1.8" />
+      <module name="user-service01" target="1.8" />
+      <module name="user-service1" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
