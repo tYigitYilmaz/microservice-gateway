@@ -8,6 +8,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.math.BigDecimal;
 
@@ -38,6 +39,8 @@ public class AccountServiceImpl implements AccountServiceProxy {
 
 
     @Override
+    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
+            "/transactionAmount/{transactionAmount}")
     public TransactionBalance accountMatcher(String transactionNumber,String accountNumber) {
 
         TransactionBalance response = accountServiceProxy.accountMatcher(transactionNumber,accountNumber);

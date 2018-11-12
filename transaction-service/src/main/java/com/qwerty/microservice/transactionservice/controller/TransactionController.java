@@ -5,6 +5,7 @@ package com.qwerty.microservice.transactionservice.controller;
 import com.qwerty.microservice.transactionservice.domain.Transaction;
 import com.qwerty.microservice.transactionservice.domain.TransactionBalance;
 import com.qwerty.microservice.transactionservice.service.TransactionService;
+import com.qwerty.microservice.transactionservice.service.proxy.AccountServiceImpl;
 import com.qwerty.microservice.transactionservice.service.proxy.AccountServiceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,7 +22,7 @@ public class TransactionController {
 
     private TransactionService transactionService;
 
-    private AccountServiceProxy accountServiceProxy;
+    private AccountServiceImpl accountServiceImpl;
 
     @Autowired
     public void TransactionService(TransactionService transactionService){
@@ -33,12 +34,12 @@ public class TransactionController {
     }
 
    @Autowired
-    public void AccountServiceProxy(AccountServiceProxy accountServiceProxy){
-        this.accountServiceProxy=accountServiceProxy;
+    public void AccountServiceImpl(AccountServiceImpl accountServiceImpl){
+        this.accountServiceImpl=accountServiceImpl;
     }
 
-    public AccountServiceProxy getAccountServiceProxy(){
-        return accountServiceProxy;
+    public AccountServiceImpl getAccountServiceImpl(){
+        return accountServiceImpl;
     }
 
 
@@ -66,7 +67,7 @@ public class TransactionController {
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
           {
-        TransactionBalance response =  accountServiceProxy.accountMatcher(transationNumber,accountNumber);
+        TransactionBalance response =  accountServiceImpl.accountMatcher(transationNumber,accountNumber);
         transactionService.deposit(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount),response.getAccountBalance() );
 

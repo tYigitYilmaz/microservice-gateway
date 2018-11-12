@@ -8,11 +8,7 @@ import com.qwerty.microservices.accountservice.service.AccountService;
 import com.qwerty.microservices.accountservice.service.TransactionNumberService;
 import com.qwerty.microservices.accountservice.service.proxy.TransactionProxy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -73,8 +69,8 @@ public class AccountTransactionController {
         return response;
     }*/
 
-    @GetMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
-    public  Account retrieveAccountBalance(@PathVariable String accountNumber){
+    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
+    public  Account retrieveAccountBalance(@PathVariable String transactionNumber,@PathVariable String accountNumber){
 
         return accountDao.findByAccountNumber(Integer.valueOf(accountNumber));
     }

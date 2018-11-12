@@ -8,13 +8,15 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @FeignClient(name = "netflix-eureka-naming-server")
 @RibbonClient(name = "account-service")
 @Component
 public interface AccountServiceProxy {
 
-    @GetMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
+    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
+            "/transactionAmount/{transactionAmount}")
     TransactionBalance accountMatcher(@PathVariable(value = "transactionNumber") String transationNumber,@PathVariable(value = "accountNumber") String accountNumber);
              /*
             , @PathVariable(value = "accountNumber") String accountNumber
