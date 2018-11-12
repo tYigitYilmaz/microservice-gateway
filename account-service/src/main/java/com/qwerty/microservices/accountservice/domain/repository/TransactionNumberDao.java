@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface TransactionNumberDao extends CrudRepository<TransactionNumber,Long> {
 
     TransactionNumber findByTransactionNumber(int transactionNumber);
+    TransactionNumber findByAccountNumber(int accountNumber);
 }

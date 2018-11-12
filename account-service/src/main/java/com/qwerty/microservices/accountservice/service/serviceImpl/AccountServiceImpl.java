@@ -3,14 +3,11 @@ package com.qwerty.microservices.accountservice.service.serviceImpl;
 
 import com.qwerty.microservices.accountservice.domain.Account;
 import com.qwerty.microservices.accountservice.domain.repository.AccountDao;
-import com.qwerty.microservices.accountservice.domain.repository.TransactionNumberDao;
 import com.qwerty.microservices.accountservice.service.AccountService;
-import com.qwerty.microservices.accountservice.service.TransactionNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {

@@ -4,9 +4,8 @@ package com.qwerty.microservices.accountservice.controller;
 import com.qwerty.microservices.accountservice.domain.Account;
 import com.qwerty.microservices.accountservice.domain.TransactionNumber;
 import com.qwerty.microservices.accountservice.domain.repository.AccountDao;
+import com.qwerty.microservices.accountservice.domain.repository.TransactionNumberDao;
 import com.qwerty.microservices.accountservice.service.AccountService;
-import com.qwerty.microservices.accountservice.service.TransactionNumberService;
-import com.qwerty.microservices.accountservice.service.proxy.TransactionProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AccountTransactionController {
 
-    private TransactionProxy transactionProxy;
+    private TransactionNumberDao transactionNumberDao;
     private AccountService accountService;
     private AccountDao accountDao;
 
     @Autowired
-    public void setTransactionProxy(TransactionProxy transactionProxy) {
-        this.transactionProxy = transactionProxy;
+    public void setTransactionNumberDao(TransactionNumberDao transactionNumberDao) {
+        this.transactionNumberDao = transactionNumberDao;
     }
 
-    public TransactionProxy getTransactionProxy() {
-        return transactionProxy;
+    public TransactionNumberDao getTransactionNumberDao() {
+        return transactionNumberDao;
     }
 
     @Autowired
@@ -70,8 +69,13 @@ public class AccountTransactionController {
     }*/
 
     @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
-    public  Account retrieveAccountBalance(@PathVariable String transactionNumber,@PathVariable String accountNumber){
+    public  TransactionNumber retrieveAccountBalance(@PathVariable String transactionNumber,@PathVariable String accountNumber){
+        Account account = accountDao.findByAccountNumber(Integer.valueOf(accountNumber));
 
-        return accountDao.findByAccountNumber(Integer.valueOf(accountNumber));
+        TransactionNumber transactionNum = new  TransactionNumber(Integer.valueOf(transactionNumber),Integer.valueOf(accountNumber),
+                account.getAccountBalance());
+        transactionNumberDao.save(transactionNum);
+
+        return transactionNum;
     }
 }

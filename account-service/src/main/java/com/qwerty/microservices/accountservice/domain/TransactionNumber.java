@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class TransactionNumber {
@@ -16,16 +17,15 @@ public class TransactionNumber {
     private Long id;
     private int transactionNumber;
     private int accountNumber;
+    private BigDecimal accountBalance;
 
     @JsonIgnore
     private int port;
 
-    public TransactionNumber() {
-    }
-
-    public TransactionNumber(int transactionNumber, int accountNumber) {
+    public TransactionNumber(int transactionNumber, int accountNumber, BigDecimal accountBalance) {
         this.transactionNumber = transactionNumber;
         this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
     }
 
     public Long getId() {
@@ -50,6 +50,14 @@ public class TransactionNumber {
 
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    public BigDecimal getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(BigDecimal accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public int getPort() {
