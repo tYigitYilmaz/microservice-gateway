@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class AccountController {
+public class AccountTransactionController {
 
     private TransactionProxy transactionProxy;
     private AccountService accountService;

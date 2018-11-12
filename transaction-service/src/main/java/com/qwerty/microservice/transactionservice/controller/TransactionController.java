@@ -27,8 +27,9 @@ public class TransactionController {
     }
 
 
-    @GetMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber},/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
-    public Transaction depositTransaction(@PathVariable(value = "transactionNumber") String transationNumber
+    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}/updatedBalance/{updatedBalance}")
+    public Transaction depositTransaction
+            (@PathVariable(value = "transactionNumber") String transationNumber
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount
             , @PathVariable(value = "updatedBalance") String updatedBalance){
@@ -36,10 +37,10 @@ public class TransactionController {
                 Integer.valueOf(accountNumber),
                 new BigDecimal(transactionAmount),
                 new BigDecimal(updatedBalance));
-        return  response;
+        return response ;
     }
 
-    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
+    @GetMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
             "/transactionAmount/{transactionAmount}/updatedBalance/{updatedBalance}")
     public Transaction deposit(@PathVariable(value = "transactionNumber") String transationNumber
             , @PathVariable(value = "accountNumber") String accountNumber

@@ -26,7 +26,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction createTransaction(int transactionNumber, int accountNumber, BigDecimal amount, BigDecimal availableBalance) {
-       Transaction transaction = new Transaction(transactionGen(),accountNumber,amount,availableBalance);
+       Transaction transaction = new Transaction(transactionNumber,accountNumber,amount,availableBalance);
         return null;
     }
 
