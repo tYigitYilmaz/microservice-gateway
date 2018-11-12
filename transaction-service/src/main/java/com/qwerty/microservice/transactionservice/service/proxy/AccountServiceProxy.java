@@ -6,7 +6,6 @@ import com.qwerty.microservice.transactionservice.domain.TransactionBalance;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -15,8 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Component
 public interface AccountServiceProxy {
 
-    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
-            "/transactionAmount/{transactionAmount}")
+    @PostMapping(value ="/account-service/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
     TransactionBalance accountMatcher(@PathVariable(value = "transactionNumber") String transationNumber,@PathVariable(value = "accountNumber") String accountNumber);
              /*
             , @PathVariable(value = "accountNumber") String accountNumber

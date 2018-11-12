@@ -60,8 +60,7 @@ public class TransactionController {
     }*/
 
 
-    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
-            "/transactionAmount/{transactionAmount}")
+    @PostMapping(value = "/transaction-feign/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
     public Transaction depositTransaction(@PathVariable(value = "transactionNumber") String transationNumber
             , @PathVariable(value = "transactionType") String transactionType
             , @PathVariable(value = "accountNumber") String accountNumber

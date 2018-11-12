@@ -42,7 +42,7 @@
           <entry key="cmd" value="2" />
           <entry key="html" value="12" />
           <entry key="iml" value="2" />
-          <entry key="java" value="330" />
+          <entry key="java" value="331" />
           <entry key="md" value="1" />
           <entry key="properties" value="46" />
           <entry key="sql" value="2" />
@@ -53,7 +53,7 @@
         <counts>
           <entry key="HTML" value="12" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="330" />
+          <entry key="JAVA" value="331" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="46" />
@@ -64,16 +64,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="81" />
-          <entry key="java" value="8256" />
+          <entry key="java" value="8348" />
           <entry key="properties" value="166" />
-          <entry key="txt" value="15" />
+          <entry key="txt" value="16" />
           <entry key="xml" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8256" />
-          <entry key="PLAIN_TEXT" value="96" />
+          <entry key="JAVA" value="8348" />
+          <entry key="PLAIN_TEXT" value="97" />
           <entry key="Properties" value="166" />
           <entry key="XML" value="51" />
         </counts>
@@ -85,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+            <state relative-caret-position="211">
+              <caret line="16" column="140" selection-start-line="16" selection-start-column="140" selection-end-line="16" selection-end-column="140" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/controller/TransactionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="73" column="61" selection-start-line="73" selection-start-column="61" selection-end-line="73" selection-end-column="61" />
+            <state relative-caret-position="175">
+              <caret line="62" column="180" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="180" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1138#1139#0" expanded="true" />
@@ -113,22 +113,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountCurrencyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountTransactionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="71" column="124" selection-start-line="71" selection-start-column="124" selection-end-line="71" selection-end-column="124" />
+            <state relative-caret-position="212">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1531#1532#0" expanded="true" />
@@ -204,14 +192,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="31" />
+            <state relative-caret-position="194">
+              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="125" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#803#804#0" expanded="true" />
                 <element signature="e#845#846#0" expanded="true" />
                 <element signature="e#1298#1299#0" expanded="true" />
                 <element signature="e#1339#1340#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/TransactionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -281,10 +281,10 @@
         <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/serciveImpl/TransactionServiceImpl.java" />
         <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/domain/repository/TransactionBalanceDao.java" />
         <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/domain/TransactionBalance.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountTransactionController.java" />
         <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceProxy.java" />
         <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/controller/TransactionController.java" />
+        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountTransactionController.java" />
+        <option value="$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceProxy.java" />
       </list>
     </option>
   </component>
@@ -536,7 +536,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/otunckaya/Desktop/JavaProject/bank-application/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542051807286" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542052873301" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -631,7 +631,7 @@
       <updated>1541856107871</updated>
       <workItem from="1541856113470" duration="68746000" />
       <workItem from="1542000963065" duration="4344000" />
-      <workItem from="1542006932700" duration="28716000" />
+      <workItem from="1542006932700" duration="29706000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1542005801302</created>
@@ -668,11 +668,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542050779388</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update #6">
+      <created>1542051867670</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542051867670</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101806000" />
+    <option name="totallyTimeSpent" value="102796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -726,7 +733,8 @@
     <MESSAGE value="Update #3" />
     <MESSAGE value="Update #4" />
     <MESSAGE value="Update #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update #5" />
+    <MESSAGE value="Update #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update #6" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/domain/UserAccountNumber.java">
@@ -1014,16 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/TransactionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/domain/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1033">
@@ -1139,22 +1137,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountTransactionController.java">
+    <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/TransactionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="71" column="124" selection-start-line="71" selection-start-column="124" selection-end-line="71" selection-end-column="124" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1531#1532#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        <state relative-caret-position="170">
+          <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1163,8 +1149,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="31" />
+        <state relative-caret-position="194">
+          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="125" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#803#804#0" expanded="true" />
@@ -1175,10 +1161,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountTransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/service/proxy/AccountServiceProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" column="140" selection-start-line="16" selection-start-column="140" selection-end-line="16" selection-end-column="140" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/transaction-service/src/main/java/com/qwerty/microservice/transactionservice/controller/TransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="73" column="61" selection-start-line="73" selection-start-column="61" selection-end-line="73" selection-end-column="61" />
+        <state relative-caret-position="175">
+          <caret line="62" column="180" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="180" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1138#1139#0" expanded="true" />
