@@ -16,7 +16,7 @@ public class AccountCurrencyController {
 
     private CurrencyExchangeProxy currencyExchangeProxy;
     private AccountService accountService;
-    private TransactionNumberService transactionNumberService;
+
 
     @Autowired
     public void setCurrencyExchangeProxy(CurrencyExchangeProxy currencyExchangeProxy) {
@@ -36,14 +36,6 @@ public class AccountCurrencyController {
         return accountService;
     }
 
-    @Autowired
-    public void setTransactionNumberService(TransactionNumberService transactionNumberService) {
-        this.transactionNumberService = transactionNumberService;
-    }
-
-    public TransactionNumberService getTransactionNumberService() {
-        return transactionNumberService;
-    }
 
     @RequestMapping(value = "/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}", method = RequestMethod.GET)
     public CurrencyExchange convertCurrencyFeign(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity) {
