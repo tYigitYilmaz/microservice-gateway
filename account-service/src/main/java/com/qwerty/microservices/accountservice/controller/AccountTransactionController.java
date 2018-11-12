@@ -74,6 +74,7 @@ public class AccountTransactionController {
 
         TransactionNumber transactionNum = new  TransactionNumber(Integer.valueOf(transactionNumber),Integer.valueOf(accountNumber),
                 account.getAccountBalance());
+
         transactionNumberDao.save(transactionNum);
 
         return transactionNum;

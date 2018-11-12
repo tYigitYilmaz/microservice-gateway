@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class AccountServiceImpl implements AccountService {
 
     private AccountDao accountDao;
-    private TransactionNumberService transactionNumberService;
+
 
     @Autowired
     public void SetAccountDao(AccountDao accountDao) {
@@ -22,15 +22,6 @@ public class AccountServiceImpl implements AccountService {
 
     public AccountDao getAccountDao() {
         return accountDao;
-    }
-
-    @Autowired
-    public void setTransactionNumberService(TransactionNumberService transactionNumberService){
-        this.transactionNumberService =transactionNumberService;
-    }
-
-    public TransactionNumberService getTransactionNumberService(){
-        return transactionNumberService;
     }
 
     @Override
