@@ -1,3 +1,4 @@
+/*
 package com.qwerty.microservice.transactionservice.service.proxy;
 
 import com.qwerty.microservice.transactionservice.domain.TransactionBalance;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.math.BigDecimal;
 
 @FeignClient(name = "netflix-eureka-naming-server")
 @RibbonClient(name = "account-service")
@@ -40,10 +40,12 @@ public class AccountServiceImpl implements AccountServiceProxy {
 
     @Override
     @PostMapping(value ="/account-service/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
-    public TransactionBalance accountMatcher(String transactionNumber,String accountNumber) {
+    public TransactionBalance accountMatcher(@PathVariable(value = "transactionNumber") String transationNumber,
+                                             @PathVariable(value = "accountNumber") String accountNumber) {
 
-        TransactionBalance response = accountServiceProxy.accountMatcher(transactionNumber,accountNumber);
+        TransactionBalance response = accountServiceProxy.accountMatcher(transationNumber,accountNumber);
 
-        return new TransactionBalance(Integer.valueOf(transactionNumber),response.getAccountBalance());
+        return new TransactionBalance(Integer.valueOf(transationNumber),response.getAccountBalance());
     }
 }
+*/
