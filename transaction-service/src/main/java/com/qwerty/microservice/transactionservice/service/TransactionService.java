@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Component
 public interface TransactionService {
 
-    Transaction createTransaction(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance);
+    Transaction createTransaction(int transactionNumber,String description, int accountNumber, BigDecimal amount);
 
     Transaction deposit(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance);
 

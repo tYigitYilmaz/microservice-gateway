@@ -3,6 +3,7 @@ package com.qwerty.microservice.transactionservice.controller;
 
 
 import com.qwerty.microservice.transactionservice.domain.Transaction;
+import com.qwerty.microservice.transactionservice.domain.TransactionBalance;
 import com.qwerty.microservice.transactionservice.service.TransactionService;
 import com.qwerty.microservice.transactionservice.service.proxy.AccountServiceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,10 +65,12 @@ public class TransactionController {
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
           {
-        Transaction response =  accountServiceProxy.accountMatcher(accountNumber);
+        TransactionBalance response =  accountServiceProxy.accountMatcher(accountNumber);
         transactionService.deposit(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount),response.getAccountBalance() );
-        return  response;
+
+        return  new Transaction(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
+                ,new BigDecimal(transactionAmount));
     }
 
 
