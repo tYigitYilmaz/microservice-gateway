@@ -20,6 +20,7 @@ public class TransactionController {
 
 
     private TransactionService transactionService;
+
     private AccountServiceProxy accountServiceProxy;
 
     @Autowired
@@ -65,7 +66,7 @@ public class TransactionController {
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
           {
-        TransactionBalance response =  accountServiceProxy.accountMatcher(accountNumber);
+        TransactionBalance response =  accountServiceProxy.accountMatcher(transationNumber,accountNumber);
         transactionService.deposit(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount),response.getAccountBalance() );
 

@@ -3,10 +3,12 @@ package com.qwerty.microservices.accountservice.controller;
 
 import com.qwerty.microservices.accountservice.domain.Account;
 import com.qwerty.microservices.accountservice.domain.TransactionNumber;
+import com.qwerty.microservices.accountservice.domain.repository.AccountDao;
 import com.qwerty.microservices.accountservice.service.AccountService;
 import com.qwerty.microservices.accountservice.service.TransactionNumberService;
 import com.qwerty.microservices.accountservice.service.proxy.TransactionProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +20,7 @@ public class AccountTransactionController {
 
     private TransactionProxy transactionProxy;
     private AccountService accountService;
-    private TransactionNumberService transactionNumberService;
+    private AccountDao accountDao;
 
     @Autowired
     public void setTransactionProxy(TransactionProxy transactionProxy) {
@@ -39,15 +41,15 @@ public class AccountTransactionController {
     }
 
     @Autowired
-    public void setTransactionNumberService(TransactionNumberService transactionNumberService) {
-        this.transactionNumberService = transactionNumberService;
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
     }
 
-    public TransactionNumberService getTransactionNumberService() {
-        return transactionNumberService;
+    public AccountDao getAccountDao() {
+        return accountDao;
     }
 
-    @RequestMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/accountBalance/{accountBalance}/amount")
+  /*  @RequestMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/accountBalance/{accountBalance}/amount")
     public TransactionNumber SaveTransactionNumber(@PathVariable(value = "transactionNumber") String transationNumber
             , @PathVariable(value = "accountNumber") String accountNumber) {
 
@@ -69,7 +71,11 @@ public class AccountTransactionController {
         accountService.transactionAccountUpdate(response.getAccountNumber(),response.getAccountBalance());
 
         return response;
+    }*/
+
+    @GetMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
+    public  Account retrieveAccountBalance(@PathVariable String accountNumber){
+
+        return accountDao.findByAccountNumber(Integer.valueOf(accountNumber));
     }
-
-
 }

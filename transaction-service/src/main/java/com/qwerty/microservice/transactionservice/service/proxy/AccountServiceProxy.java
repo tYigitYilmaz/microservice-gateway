@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface AccountServiceProxy {
 
     @GetMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
-    TransactionBalance accountMatcher(@PathVariable(value = "accountNumber") String accountNumber);
-             /*@PathVariable(value = "transactionNumber") String transationNumber
+    TransactionBalance accountMatcher(@PathVariable(value = "transactionNumber") String transationNumber,@PathVariable(value = "accountNumber") String accountNumber);
+             /*
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount
             , @PathVariable(value = "updatedBalance") String updatedBalance*/
