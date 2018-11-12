@@ -24,6 +24,7 @@
       <module name="netflix-eureka-namingserver" target="1.8" />
       <module name="netflix-zuul-gateway" target="1.8" />
       <module name="transaction-service" target="1.8" />
+      <module name="transaction-service01" target="1.8" />
       <module name="user-service" target="1.8" />
       <module name="user-service01" target="1.8" />
       <module name="user-service1" target="1.8" />

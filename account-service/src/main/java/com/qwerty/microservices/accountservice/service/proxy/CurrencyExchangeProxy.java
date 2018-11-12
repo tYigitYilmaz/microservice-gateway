@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
-@FeignClient(name = "netflix-eureka-namingserver")
-@RibbonClient(name = "transaction-service")
+@FeignClient(name = "netflix-eureka-naming-server")
+@RibbonClient(name = "currency-exchange-service")
 @Component
 public interface CurrencyExchangeProxy {
 

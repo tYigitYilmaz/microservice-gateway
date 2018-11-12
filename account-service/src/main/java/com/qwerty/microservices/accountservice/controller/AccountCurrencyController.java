@@ -54,6 +54,5 @@ public class AccountCurrencyController {
 
         return new CurrencyExchange(response.getId(), from, to, response.getConversionMultiple(), quantity,
                 quantity.multiply(response.getConversionMultiple()), response.getPort());
-
     }
 }

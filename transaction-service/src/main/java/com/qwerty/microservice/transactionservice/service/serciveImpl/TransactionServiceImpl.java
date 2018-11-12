@@ -25,42 +25,44 @@ public class TransactionServiceImpl implements TransactionService {
 
 
     @Override
-    public Transaction createTransaction(int transactionNumber, int accountNumber, BigDecimal amount, BigDecimal availableBalance) {
-       Transaction transaction = new Transaction(transactionNumber,accountNumber,amount,availableBalance);
-        return null;
+    public Transaction createTransaction(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance) {
+       Transaction transaction = new Transaction(transactionNumber,description,accountNumber,amount,availableBalance);
+       transactionDao.save(transaction);
+        return transaction;
     }
 
     @Override
-    public Transaction deposit(int accountNumber, int transactionId, BigDecimal accountBalance, String amount) {
-        Transaction transaction = createTransaction(transactionGen(),accountNumber,new BigDecimal(amount),accountBalance);
-        transaction.setAvailableBalance(transaction.getAvailableBalance().add(new BigDecimal(amount)));
+    public Transaction deposit(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance) {
+        Transaction transaction = createTransaction(transactionNumber,description,accountNumber,amount,availableBalance);
+        transaction.setAccountBalance(transaction.getAccountBalance().add(amount));
         transactionDao.save(transaction);
         return transaction;
     }
 
     @Override
-    public Transaction withDraw(int accountNumber, int transactionId, BigDecimal accountBalance, String amount) {
-        Transaction transaction = createTransaction(transactionGen(),accountNumber,new BigDecimal(amount).multiply(BigDecimal.valueOf(-1)),accountBalance);
-        transaction.setAvailableBalance(transaction.getAvailableBalance().subtract(new BigDecimal(amount)));
+    public Transaction withDraw(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance) {
+        Transaction transaction = createTransaction(transactionGen(),description,accountNumber,amount.multiply(BigDecimal.valueOf(-1)),availableBalance);
+        transaction.setAccountBalance(transaction.getAccountBalance().subtract(amount));
         transactionDao.save(transaction);
         return transaction;
     }
 
     @Override
-    public Transaction transactionBetweenAccounts(int accountFrom, int accountTo, Long transactionId, BigDecimal accountFromBalance, BigDecimal accountToBalance, String amount) {
+    public Transaction transactionBetweenAccounts(int accountFrom,int accountTo,String description
+            ,int transactionNumber,BigDecimal accountFromBalance,BigDecimal accountToBalance,BigDecimal amount) {
 
-        Transaction transactionFrom = createTransaction(transactionGen(),accountFrom,new BigDecimal(amount).multiply(BigDecimal.valueOf(-1)),accountFromBalance);
-        Transaction transactionTo = createTransaction(transactionGen(),accountTo,new BigDecimal(amount),accountFromBalance);
-        transactionFrom.setAvailableBalance(transactionFrom.getAvailableBalance().subtract(new BigDecimal(amount)));
-        transactionTo.setAvailableBalance(transactionTo.getAvailableBalance().add(new BigDecimal(amount)));
+        Transaction transactionFrom = createTransaction(transactionNumber,description,accountFrom,amount.multiply(BigDecimal.valueOf(-1)),accountFromBalance);
+        Transaction transactionTo = createTransaction(transactionNumber,description,accountTo,amount,accountFromBalance);
+        transactionFrom.setAccountBalance(transactionFrom.getAccountBalance().subtract(amount));
+        transactionTo.setAccountBalance(transactionTo.getAccountBalance().add(amount));
         transactionDao.save(transactionFrom);
         transactionDao.save(transactionTo);
         return transactionFrom;
     }
 
     @Override
-    public boolean CheckAccountBalance(int accountNumber, BigDecimal accountBallance, String amount) {
-        int res = accountBallance.compareTo(new BigDecimal(amount));
+    public boolean CheckAccountBalance(int accountNumber, BigDecimal accountBallance, BigDecimal amount) {
+        int res = accountBallance.compareTo(amount);
         return res >= 0;
     }
 

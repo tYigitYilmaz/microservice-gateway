@@ -8,15 +8,15 @@ import java.math.BigDecimal;
 @Component
 public interface TransactionService {
 
-    Transaction createTransaction(int transactionNumber,int accountNumber,BigDecimal amount,BigDecimal availableBalance);
+    Transaction createTransaction(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance);
 
-    Transaction deposit(int accountNumber, int transactionNumber, BigDecimal accountBalance, String amount);
+    Transaction deposit(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalance);
 
-    Transaction withDraw(int accountNumber,int transactionNumber,BigDecimal accountBalance,String amount);
+    Transaction withDraw(int transactionNumber,String description, int accountNumber, BigDecimal amount, BigDecimal availableBalancet);
 
-    Transaction transactionBetweenAccounts(int accountFrom,int accountTo
-            ,Long transactionId,BigDecimal accountFromBalance,BigDecimal accountToBalance,String amount);
+    Transaction transactionBetweenAccounts(int accountFrom,int accountTo,String description
+            ,int transactionNumber,BigDecimal accountFromBalance,BigDecimal accountToBalance,BigDecimal amount);
 
-    boolean CheckAccountBalance(int accountNumber, BigDecimal accountBallance, String amount);
+    boolean CheckAccountBalance(int accountNumber, BigDecimal accountBallance, BigDecimal amount);
 
 }
