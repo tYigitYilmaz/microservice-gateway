@@ -39,7 +39,7 @@ public class AccountServiceImpl implements AccountServiceProxy {
 
 
     @Override
-    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
+    @PostMapping(value ="/account-service/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
     public TransactionBalance accountMatcher(String transactionNumber,String accountNumber) {
 
         TransactionBalance response = accountServiceProxy.accountMatcher(transactionNumber,accountNumber);
