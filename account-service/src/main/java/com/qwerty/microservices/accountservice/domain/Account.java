@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@SequenceGenerator(name="seq", initialValue=1000000, allocationSize=10000000)
 public class Account {
 
     @Id
@@ -17,8 +16,18 @@ public class Account {
     private int accountNumber;
     private BigDecimal accountBalance;
 
+    @JsonIgnore
+    private int port;
 
-    private ArrayList<TransactionNumber> transactioNumberList;
+
+    public Account(int accountNumber, BigDecimal accountBalance) {
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+    }
+
+    public Account(){
+    }
+
 
 
     public Long getId() {
@@ -45,11 +54,11 @@ public class Account {
         this.accountBalance = accountBalance;
     }
 
-    public ArrayList<TransactionNumber> getTransactioNumberList() {
-        return transactioNumberList;
+    public int getPort() {
+        return port;
     }
 
-    public void setTransactioNumberList(ArrayList<TransactionNumber> transactioNumberList) {
-        this.transactioNumberList = transactioNumberList;
+    public void setPort(int port) {
+        this.port = port;
     }
 }

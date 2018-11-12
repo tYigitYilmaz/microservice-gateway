@@ -1,7 +1,7 @@
 package com.qwerty.mircoservices.userservice.service.serviceImpl;
 
 
-import com.qwerty.mircoservices.userservice.domain.UserAccount;
+import com.qwerty.mircoservices.userservice.domain.UserAccountNumber;
 import com.qwerty.mircoservices.userservice.domain.repository.UserAccountDao;
 import com.qwerty.mircoservices.userservice.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public void createUserAccount(String username, String firstName, String lastName) {
 
-        UserAccount userAccount = new UserAccount(username, firstName, lastName);
+        UserAccountNumber userAccountNumber = new UserAccountNumber(username, firstName, lastName);
 
-        userAccountDao.save(userAccount);
+        userAccountDao.save(userAccountNumber);
     }
 }

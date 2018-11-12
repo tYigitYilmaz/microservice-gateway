@@ -1,11 +1,11 @@
 package com.qwerty.mircoservices.userservice.domain.repository;
 
 
-import com.qwerty.mircoservices.userservice.domain.UserAccount;
+import com.qwerty.mircoservices.userservice.domain.UserAccountNumber;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserAccountDao extends CrudRepository<UserAccount, Long> {
-    UserAccount findByUsername(String username);
+public interface UserAccountDao extends CrudRepository<UserAccountNumber, Long> {
+    UserAccountNumber findByUsername(String username);
 
-    UserAccount findByAccountNumber(Long accountNumber);
+    UserAccountNumber findByAccountNumber(Long accountNumber);
 }

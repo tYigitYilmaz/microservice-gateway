@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @SequenceGenerator(name = "seq", initialValue = 1000000, allocationSize = 10000000)
-public class UserAccount {
+public class UserAccountNumber {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
@@ -15,7 +15,7 @@ public class UserAccount {
     private String firstName;
     private String lastName;
 
-    public UserAccount(String username, String firstName, String lastName) {
+    public UserAccountNumber(String username, String firstName, String lastName) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

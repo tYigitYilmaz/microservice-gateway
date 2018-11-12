@@ -8,17 +8,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="account-service" />
         <module name="bank-application" />
-        <module name="netflix-eurkea-namingserver" />
+        <module name="currency-exchange-service" />
+        <module name="netflix-eureka-naming-server" />
         <module name="netflix-zuul-gateway" />
+        <module name="transaction-service" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service" target="1.8" />
       <module name="bank-application" target="1.8" />
+      <module name="currency-exchange-service" target="1.8" />
       <module name="demo" target="1.8" />
-      <module name="netflix-eurkea-namingserver" target="1.8" />
+      <module name="netflix-eureka-naming-server" target="1.8" />
+      <module name="netflix-eureka-namingserver" target="1.8" />
       <module name="netflix-zuul-gateway" target="1.8" />
+      <module name="transaction-service" target="1.8" />
       <module name="user-service" target="1.8" />
       <module name="user-service01" target="1.8" />
       <module name="user-service1" target="1.8" />

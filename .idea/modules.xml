@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/account-service/account-service.iml" filepath="$PROJECT_DIR$/account-service/account-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bank-application.iml" filepath="$PROJECT_DIR$/bank-application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/netflix-eurkea-namingserver/netflix-eurkea-namingserver.iml" filepath="$PROJECT_DIR$/netflix-eurkea-namingserver/netflix-eurkea-namingserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency-exchange-service/currency-exchange-service.iml" filepath="$PROJECT_DIR$/currency-exchange-service/currency-exchange-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netflix-eureka-naming-server/netflix-eureka-naming-server.iml" filepath="$PROJECT_DIR$/netflix-eureka-naming-server/netflix-eureka-naming-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/netflix-zuul-gateway/netflix-zuul-gateway.iml" filepath="$PROJECT_DIR$/netflix-zuul-gateway/netflix-zuul-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transaction-service/transaction-service.iml" filepath="$PROJECT_DIR$/transaction-service/transaction-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
     </modules>
   </component>

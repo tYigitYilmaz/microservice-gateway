@@ -3,16 +3,20 @@ package com.qwerty.microservices.accountservice.service.serviceImpl;
 
 import com.qwerty.microservices.accountservice.domain.Account;
 import com.qwerty.microservices.accountservice.domain.repository.AccountDao;
+import com.qwerty.microservices.accountservice.domain.repository.TransactionNumberDao;
 import com.qwerty.microservices.accountservice.service.AccountService;
+import com.qwerty.microservices.accountservice.service.TransactionNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
 
     private AccountDao accountDao;
+    private TransactionNumberService transactionNumberService;
 
     @Autowired
     public void SetAccountDao(AccountDao accountDao) {
@@ -23,35 +27,26 @@ public class AccountServiceImpl implements AccountService {
         return accountDao;
     }
 
-    @Override
-    public boolean DecreaseFromBalance(int accountNumber, String amount) {
-        if (accountDao.findByAccountNumber(accountNumber) != null) {
-            Account account = accountDao.findByAccountNumber(accountNumber);
-            if (account.getAccountBalance().compareTo(account.getAccountBalance().subtract(new BigDecimal(amount))) >= 0) {
-                account.setAccountBalance(account.getAccountBalance().subtract(new BigDecimal(amount)));
-                accountDao.save(account);
-                return true;
-            } else
-                System.out.println("Account has no enough balance");
-            return false;
-        }
-        return false;
+    @Autowired
+    public void setTransactionNumberService(TransactionNumberService transactionNumberService){
+        this.transactionNumberService =transactionNumberService;
+    }
+
+    public TransactionNumberService getTransactionNumberService(){
+        return transactionNumberService;
     }
 
     @Override
-    public boolean AddToBalance(int accountNumber, String amount) {
-        if (accountDao.findByAccountNumber(accountNumber) != null) {
-            Account account = accountDao.findByAccountNumber(accountNumber);
-            account.setAccountBalance(account.getAccountBalance().add(new BigDecimal(amount)));
-            return true;
-        }
-        return false;
-    }
-
-/*    @Override
-    public Account ShowCurrencyConvertedBalance(int accountNumber, BigDecimal Balance,String from,String to) {
+    public BigDecimal findAccountBallance(int accountNumber) {
         Account account = accountDao.findByAccountNumber(accountNumber);
+        return account.getAccountBalance();
+    }
 
-        return account;
-    }*/
+    @Override
+    public Account transactionAccountUpdate(int accountNumber, BigDecimal updatedBalance) {
+       Account account = accountDao.findByAccountNumber(accountNumber);
+       account.setAccountBalance(updatedBalance);
+
+       return account;
+    }
 }
