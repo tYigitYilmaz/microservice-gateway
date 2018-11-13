@@ -48,15 +48,15 @@ public class TransactionController {
     }
 
     @PostMapping(value = "/transaction-feign/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
-    public Transaction depositTransaction(@PathVariable(value = "transactionNumber") String transationNumber
+    public Transaction depositTransaction(@PathVariable(value = "transactionNumber") int transationNumber
             , @PathVariable(value = "transactionType") String transactionType
-            , @PathVariable(value = "accountNumber") String accountNumber
+            , @PathVariable(value = "accountNumber") int accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
     {
         TransactionBalance response =  accountProxy.accountMatcher(transationNumber,accountNumber);
-        transactionService.deposit(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
+        transactionService.deposit(accountNumber,transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount),response.getAccountBalance() );
-        return  new Transaction(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
+        return  new Transaction(accountNumber,transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount));
     }
 
