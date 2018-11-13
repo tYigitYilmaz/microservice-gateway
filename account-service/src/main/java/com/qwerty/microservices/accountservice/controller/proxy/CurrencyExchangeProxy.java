@@ -1,4 +1,4 @@
-package com.qwerty.microservices.accountservice.service.proxy;
+package com.qwerty.microservices.accountservice.controller.proxy;
 
 
 import com.qwerty.microservices.accountservice.domain.CurrencyExchange;

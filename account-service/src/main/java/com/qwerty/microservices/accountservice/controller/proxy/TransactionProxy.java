@@ -1,4 +1,4 @@
-package com.qwerty.microservices.accountservice.service.proxy;
+package com.qwerty.microservices.accountservice.controller.proxy;
 
 
 
@@ -21,7 +21,7 @@ public interface TransactionProxy {
                     ,@PathVariable(value = "accountNumber")String accountNumber);
 
     @GetMapping(value = "/transaction-service/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}" +
-            "/transactionAmount/{transactionAmount}/updatedBalance/{updatedBalance}")
+            "/transactionAmount/{transactionAmount}")
     Account updatedAccountBalance
             (@PathVariable(value = "transactionNumber")String transationNumber
              ,@PathVariable(value = "accountNumber")String accountNumber

@@ -2,7 +2,7 @@ package com.qwerty.microservices.accountservice.controller;
 
 import com.qwerty.microservices.accountservice.domain.CurrencyExchange;
 import com.qwerty.microservices.accountservice.service.AccountService;
-import com.qwerty.microservices.accountservice.service.proxy.CurrencyExchangeProxy;
+import com.qwerty.microservices.accountservice.controller.proxy.CurrencyExchangeProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
