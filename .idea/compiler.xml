@@ -11,6 +11,7 @@
         <module name="currency-exchange-service" />
         <module name="netflix-eureka-naming-server" />
         <module name="netflix-zuul-gateway" />
+        <module name="transaction-pack-service" />
         <module name="transaction-service" />
         <module name="user-service" />
       </profile>
@@ -23,11 +24,27 @@
       <module name="netflix-eureka-naming-server" target="1.8" />
       <module name="netflix-eureka-namingserver" target="1.8" />
       <module name="netflix-zuul-gateway" target="1.8" />
+      <module name="transaction-pack-service" target="1.8" />
       <module name="transaction-service" target="1.8" />
       <module name="transaction-service01" target="1.8" />
+      <module name="transactionpack-service" target="1.8" />
+      <module name="transactionrev-service" target="1.8" />
       <module name="user-service" target="1.8" />
       <module name="user-service01" target="1.8" />
       <module name="user-service1" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account-service" options="-parameters" />
+      <module name="currency-exchange-service" options="-parameters" />
+      <module name="netflix-eureka-naming-server" options="-parameters" />
+      <module name="netflix-zuul-gateway" options="-parameters" />
+      <module name="transaction-pack-service" options="-parameters" />
+      <module name="transaction-service" options="-parameters" />
+      <module name="transactionpack-service" options="-parameters" />
+      <module name="transactionrev-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+    </option>
   </component>
 </project>

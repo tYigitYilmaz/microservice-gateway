@@ -1,10 +1,4 @@
-package com.qwerty.microservice.transactionservice.controller;
-
-
-
-import com.qwerty.microservice.transactionservice.domain.Transaction;
-import com.qwerty.microservice.transactionservice.domain.TransactionBalance;
-import com.qwerty.microservice.transactionservice.service.TransactionService;
+package com.qwerty.microservices.transactionpackservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +13,7 @@ public class TransactionController {
 
 
     private TransactionService transactionService;
-    private AccountServiceProxy accountServiceProxy;
+    private AccountProxy accountProxy;
 
 
     @Autowired
@@ -31,38 +25,35 @@ public class TransactionController {
     }
 
     @Autowired
-    private void SetAccountServiceProxy(AccountServiceProxy accountServiceProxy){
-        this.accountServiceProxy=accountServiceProxy;
+    private void SetAccountProxy(AccountProxy accountProxy){
+        this.accountProxy=accountProxy;
     }
 
 
-    private AccountServiceProxy getAccountServiceProxy(){
-        return accountServiceProxy;
+    private AccountProxy getAccountProxy(){
+        return accountProxy;
     }
-
-
 
     @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
     public Transaction depositTransactionCreate
             (@PathVariable(value = "transactionNumber") String transationNumber
-            , @PathVariable(value = "transactionType") String transactionType
-            , @PathVariable(value = "accountNumber") String accountNumber
-            , @PathVariable(value = "transactionAmount") String transactionAmount
-           ){
+                    , @PathVariable(value = "transactionType") String transactionType
+                    , @PathVariable(value = "accountNumber") String accountNumber
+                    , @PathVariable(value = "transactionAmount") String transactionAmount
+            ){
 
 
         return new Transaction(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount));
     }
 
-
     @PostMapping(value = "/transaction-feign/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
     public Transaction depositTransaction(@PathVariable(value = "transactionNumber") String transationNumber
             , @PathVariable(value = "transactionType") String transactionType
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
-          {
-        TransactionBalance response =  accountServiceProxy.accountMatcher(transationNumber,accountNumber);
+    {
+        TransactionBalance response =  accountProxy.accountMatcher(transationNumber,accountNumber);
         transactionService.deposit(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount),response.getAccountBalance() );
         return  new Transaction(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
@@ -75,20 +66,3 @@ public class TransactionController {
         return "transaction";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
