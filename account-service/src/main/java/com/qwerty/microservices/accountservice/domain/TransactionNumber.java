@@ -22,6 +22,9 @@ public class TransactionNumber {
     @JsonIgnore
     private int port;
 
+    public TransactionNumber() {
+    }
+
     public TransactionNumber(int transactionNumber, int accountNumber, BigDecimal accountBalance) {
         this.transactionNumber = transactionNumber;
         this.accountNumber = accountNumber;

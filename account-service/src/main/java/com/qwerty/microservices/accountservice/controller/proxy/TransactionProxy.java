@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "netflix-eureka-naming-server")
+@FeignClient(name = "netflix-zuul-gateway")
 @RibbonClient (name = "transaction-service")
 @Component
 public interface TransactionProxy {

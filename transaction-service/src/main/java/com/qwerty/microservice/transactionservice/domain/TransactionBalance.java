@@ -15,6 +15,8 @@ public class TransactionBalance {
     private int transactionNumber;
     private BigDecimal accountBalance;
 
+    public TransactionBalance() {
+    }
 
     public TransactionBalance(int transactionNumber, BigDecimal accountBalance) {
         this.transactionNumber = transactionNumber;

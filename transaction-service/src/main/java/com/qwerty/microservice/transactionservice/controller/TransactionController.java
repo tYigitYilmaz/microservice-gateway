@@ -5,6 +5,7 @@ package com.qwerty.microservice.transactionservice.controller;
 import com.qwerty.microservice.transactionservice.domain.Transaction;
 import com.qwerty.microservice.transactionservice.domain.TransactionBalance;
 import com.qwerty.microservice.transactionservice.service.TransactionService;
+import com.qwerty.microservice.transactionservice.service.proxy.AccountServiceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ public class TransactionController {
 
 
     private TransactionService transactionService;
-    private AccountProxy accountProxy;
+    private AccountServiceProxy accountServiceProxy;
 
     @Autowired
     private void SetTransactionService(TransactionService transactionService){
@@ -28,42 +29,30 @@ public class TransactionController {
         return transactionService;
     }
 
-    @Autowired
-    private void SetAccountProxy(AccountProxy accountProxy){
-        this.accountProxy=accountProxy;
-    }
-    private AccountProxy getAccountProxy(){
-        return accountProxy;
-    }
 
-
-    /*
-    private AccountServiceProxy accountServiceProxy;
-   @Autowired
-    public void AccountServiceProxy(AccountServiceProxy accountServiceProxy){
+    private void SetAccountServiceProxy(AccountServiceProxy accountServiceProxy){
         this.accountServiceProxy=accountServiceProxy;
     }
 
-    public AccountServiceProxy getAccountServiceProxy(){
+
+    private AccountServiceProxy getAccountServiceProxy(){
         return accountServiceProxy;
-    }*/
+    }
 
 
-   /* @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}/updatedBalance/{updatedBalance}")
-    public Transaction depositTransaction
+
+    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
+    public Transaction depositTransactionCreate
             (@PathVariable(value = "transactionNumber") String transationNumber
             , @PathVariable(value = "transactionType") String transactionType
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount
-            , @PathVariable(value = "updatedBalance") String updatedBalance){
-        Transaction response = new Transaction(Integer.valueOf(transationNumber),transactionType,
-                Integer.valueOf(accountNumber),
-                new BigDecimal(transactionAmount),
-                new BigDecimal(updatedBalance));
-        transactionService.createTransaction(response.getTransactionNumber(),transactionType,response.getAccountNumber()
-                ,response.getAmount(),response.getAvailableBalance());
-        return response ;
-    }*/
+           ){
+
+
+        return new Transaction(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
+                ,new BigDecimal(transactionAmount));
+    }
 
 
     @PostMapping(value = "/transaction-feign/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
@@ -72,7 +61,7 @@ public class TransactionController {
             , @PathVariable(value = "accountNumber") String accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
           {
-        TransactionBalance response =  accountProxy.accountMatcher(transationNumber,accountNumber);
+        TransactionBalance response =  accountServiceProxy.accountMatcher(transationNumber,accountNumber);
         transactionService.deposit(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)
                 ,new BigDecimal(transactionAmount),response.getAccountBalance() );
         return  new Transaction(Integer.valueOf(accountNumber),transactionType,Integer.valueOf(transactionAmount)

@@ -68,7 +68,7 @@ public class AccountTransactionController {
         return response;
     }*/
 
-    @PostMapping(value = "/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
+    @GetMapping(value = "/account-service/transaction/{transactionType}/transactionNumber/{transactionNumber}/accountNumber/{accountNumber}")
     public  TransactionNumber retrieveAccountBalance(@PathVariable String transactionNumber,@PathVariable String accountNumber){
         Account account = accountDao.findByAccountNumber(Integer.valueOf(accountNumber));
 
