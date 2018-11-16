@@ -12,7 +12,6 @@
         <module name="netflix-eureka-naming-server" />
         <module name="netflix-zuul-gateway" />
         <module name="transaction-pack-service" />
-        <module name="transaction-service" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>

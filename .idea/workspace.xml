@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0a42e20-55ab-45b4-b5d1-bf35bdfa6b00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/TransactionProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/web/AccountCurrencyProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/AccountProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountCurrencyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/AccountTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountTransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/proxy/CurrencyExchangeProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/controller/proxy/TransactionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/CurrencyExchange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/TransactionNumber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/repository/TransactionNumberDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/controller/ExchangeValueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/web/ExchangeValueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/domain/ExchangeValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/domain/ExchangeValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency-exchange-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/currency-exchange-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/AccountProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/TransactionBalance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/TransactionBalanceDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/TransactionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/TransactionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,10 +32,11 @@
           <entry key="project.closed" value="7" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -93,14 +69,14 @@
           <entry key="dummy" value="103" />
           <entry key="java" value="11525" />
           <entry key="properties" value="186" />
-          <entry key="txt" value="22" />
+          <entry key="txt" value="23" />
           <entry key="xml" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="11525" />
-          <entry key="PLAIN_TEXT" value="125" />
+          <entry key="PLAIN_TEXT" value="126" />
           <entry key="Properties" value="186" />
           <entry key="XML" value="51" />
         </counts>
@@ -112,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/AccountProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="306">
               <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountTransactionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="646">
               <caret line="50" column="45" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -136,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/domain/ExchangeValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="816">
               <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
               <folding>
                 <element signature="e#1526#1527#0" expanded="true" />
@@ -147,10 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="505">
               <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -162,7 +138,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/TransactionProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="238">
               <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -171,11 +147,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+            <state relative-caret-position="289">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -183,7 +159,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/web/AccountCurrencyProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="289">
               <caret line="17" selection-start-line="17" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -195,7 +171,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
+            <state relative-caret-position="51">
               <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
             </state>
           </provider>
@@ -204,7 +180,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="442">
               <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
             </state>
           </provider>
@@ -213,14 +189,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="935">
               <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1344#1345#0" expanded="true" />
-                <element signature="e#1371#1372#0" expanded="true" />
-                <element signature="e#1409#1410#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
                 <element signature="e#1574#1575#0" expanded="true" />
                 <element signature="e#1646#1647#0" expanded="true" />
                 <element signature="e#1706#1707#0" expanded="true" />
@@ -322,7 +294,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="135" />
     <option name="width" value="1555" />
     <option name="height" value="705" />
@@ -335,6 +307,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -437,239 +410,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="currencyexchangeservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="currencyexchangeservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="currencyexchangeservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="currencyexchangeservice" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="currency-exchange-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionpackservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionpackservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionpackservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionpackservice" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionservice" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="transactionservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="serciveImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -685,7 +425,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -697,7 +436,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/otunckaya/Desktop/JavaProject/bank-application/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542356018671" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542359147165" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -812,6 +551,7 @@
       <workItem from="1542125562913" duration="23023000" />
       <workItem from="1542261992385" duration="13926000" />
       <workItem from="1542292690425" duration="15731000" />
+      <workItem from="1542355973498" duration="1314000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1542005801302</created>
@@ -925,11 +665,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542136268267</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update #12">
+      <created>1542356055782</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542356055782</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173703000" />
+    <option name="totallyTimeSpent" value="175017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,8 +688,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -950,7 +696,7 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26107383" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.21140939" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.3286119" />
@@ -998,7 +744,8 @@
     <MESSAGE value="Update #9" />
     <MESSAGE value="Update #10" />
     <MESSAGE value="Update #11" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update #11" />
+    <MESSAGE value="Update #12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update #12" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/transactionpack-service/src/main/java/com/qwerty/microservice/transactionpackservice/TransactionServiceImpl.java" />
@@ -1112,10 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-          <folding>
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,9 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1140,9 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="68" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,9 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1180,20 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency-exchange-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1208,9 +928,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/AccountProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountTransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/domain/ExchangeValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="816">
           <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
           <folding>
             <element signature="e#1526#1527#0" expanded="true" />
@@ -1222,7 +962,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/web/AccountCurrencyProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="289">
           <caret line="17" selection-start-line="17" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1230,20 +970,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountTransactionController.java">
+    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="50" column="45" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="45" />
+        <state relative-caret-position="51">
+          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+            <element signature="e#1706#1707#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/AccountProxy.java">
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        <state relative-caret-position="289">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/TransactionProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1252,45 +1016,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="505">
           <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1574#1575#0" expanded="true" />
-            <element signature="e#1646#1647#0" expanded="true" />
-            <element signature="e#1706#1707#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/TransactionProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
         </state>
       </provider>
     </entry>
