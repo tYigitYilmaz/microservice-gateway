@@ -1,4 +1,4 @@
-package com.qwerty.microservice.currencyexchangeservice.controller;
+package com.qwerty.microservice.currencyexchangeservice.web;
 
 import com.qwerty.microservice.currencyexchangeservice.domain.ExchangeValue;
 import com.qwerty.microservice.currencyexchangeservice.domain.repository.ExchangeValueDao;

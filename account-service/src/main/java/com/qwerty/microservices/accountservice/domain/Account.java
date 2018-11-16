@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 public class Account {
@@ -15,6 +16,8 @@ public class Account {
     private Long id;
     private int accountNumber;
     private BigDecimal accountBalance;
+    private BigDecimal conversionMultiply;
+    private UUID uuid = UUID.randomUUID();
 
     @JsonIgnore
     private int port;
@@ -60,5 +63,21 @@ public class Account {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public BigDecimal getConversionMultiply() {
+        return conversionMultiply;
+    }
+
+    public void setConversionMultiply(BigDecimal conversionMultiply) {
+        this.conversionMultiply = conversionMultiply;
     }
 }

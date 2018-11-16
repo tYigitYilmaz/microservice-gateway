@@ -15,16 +15,17 @@ public class ExchangeValue {
     private String to;
     private BigDecimal conversionMultiple;
     private int port;
-
+    private int accountNumber;
     public ExchangeValue(){
 
     }
 
-    public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple) {
+    public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple, int accountNumber) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.conversionMultiple = conversionMultiple;
+        this.accountNumber = accountNumber;
     }
 
     public Long getId() {
@@ -67,4 +68,11 @@ public class ExchangeValue {
         this.port = port;
     }
 
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 }

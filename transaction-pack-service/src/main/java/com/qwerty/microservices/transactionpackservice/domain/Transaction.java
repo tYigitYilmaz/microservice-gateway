@@ -1,4 +1,4 @@
-package com.qwerty.microservices.transactionpackservice;
+package com.qwerty.microservices.transactionpackservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 public class Transaction {
@@ -17,22 +18,28 @@ public class Transaction {
     private Long id;
     private int transactionNumber;
     private int accountNumber;
+    private BigDecimal accountBalance;
     private Date date;
     private String description;
     private String type;
     private String status;
     private BigDecimal amount;
 
+
+
+
     @JsonIgnore
     private int port;
+    private UUID uuid = UUID.randomUUID();
 
     public Transaction() {
     }
 
-    public Transaction(int transactionNumber, String description, int accountNumber, BigDecimal amount) {
+    public Transaction(int transactionNumber, int accountNumber, BigDecimal accountBalance, String description, BigDecimal amount) {
         this.transactionNumber = transactionNumber;
-        this.description = description;
         this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.description = description;
         this.amount = amount;
     }
 
@@ -106,5 +113,21 @@ public class Transaction {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public BigDecimal getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(BigDecimal accountBalance) {
+        this.accountBalance = accountBalance;
     }
 }

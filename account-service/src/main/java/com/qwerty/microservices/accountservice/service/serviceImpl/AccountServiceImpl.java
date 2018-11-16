@@ -34,7 +34,7 @@ public class AccountServiceImpl implements AccountService {
     public Account transactionAccountUpdate(int accountNumber, BigDecimal updatedBalance) {
        Account account = accountDao.findByAccountNumber(accountNumber);
        account.setAccountBalance(updatedBalance);
-
+       accountDao.save(account);
        return account;
     }
 }
