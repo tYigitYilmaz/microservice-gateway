@@ -17,6 +17,9 @@ public interface TransactionService {
     Transaction withDraw(int transactionNumber, int accountNumber,
                          BigDecimal accountBallance, String transactionType, BigDecimal transactionAmount);
 
-    boolean CheckAccountBalance(int accountNumber, BigDecimal accountBallance, BigDecimal amount);
+    Transaction betweenAccounts(int transactionNumber, int accountNumberFrom,int accountNumberTo, BigDecimal accountBallanceFrom
+                                ,BigDecimal accountBalanceTo, String transactionType, BigDecimal transactionAmount);
+
+    boolean checkAccountBalance(int accountNumber, BigDecimal accountBallance, BigDecimal amount);
 
 }

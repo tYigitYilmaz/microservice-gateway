@@ -4,25 +4,13 @@ import com.qwerty.microservice.currencyexchangeservice.domain.ExchangeValue;
 import com.qwerty.microservice.currencyexchangeservice.domain.repository.ExchangeValueDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 public class ExchangeValueController {
-    private Environment environment;
     private ExchangeValueDao exchangeValueDao;
-    /*  private Logger logger = LoggerFactory.getLogger(this.getClass());*/
-
-    @Autowired
-    public void setEnvironment(Environment environment) {
-        this.environment = environment;
-    }
-
-    public Environment getEnvironment() {
-        return environment;
-    }
 
     @Autowired
     public void setExchangeValueDao(ExchangeValueDao exchangeValueDao) {
@@ -33,12 +21,10 @@ public class ExchangeValueController {
         return exchangeValueDao;
     }
 
-    @RequestMapping(value = "/currency-exchange/from/{from}/to/{to}", method = RequestMethod.GET)
-    public ExchangeValue retrieveExhangeValue(@PathVariable String from, @PathVariable String to) {
-        ExchangeValue exchangeValue = exchangeValueDao.findByFromAndTo(from,to);
-        exchangeValue.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
-        /* logger.info("{}",exchangeValue);
-         */
-        return exchangeValue;
+
+    @PostMapping(value ="/currency-exchange")
+    public @ResponseBody ExchangeValue retrieveAccountCurrency(@RequestBody @Valid ExchangeValue request){
+
+        return exchangeValueDao.findByFromAndTo(request.getFrom(),request.getTo());
     }
 }

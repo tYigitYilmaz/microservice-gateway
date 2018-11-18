@@ -1,20 +1,23 @@
-package com.qwerty.microservice.currencyexchangeservice.web;
+package com.qwerty.microservices.accountservice.web;
 
 
-import com.qwerty.microservice.currencyexchangeservice.domain.ExchangeValue;
+import com.qwerty.microservices.accountservice.domain.Account;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.validation.Valid;
 
 @FeignClient(name = "netflix-zuul-gateway")
-@RibbonClient(name = "account-service")
+@RibbonClient(name = "netflix-zuul-gateway")
 @Component
 public interface AccountCurrencyProxy {
 
-    @PostMapping(value ="/account-service/currency-exchange")
-    ExchangeValue accountMatcher(@RequestBody @Valid ExchangeValue request);
+    @PostMapping(value ="/currency-exchange-service/currency-exchange")
+    Account CurrencyConfirm
+            (@PathVariable(value = "from") String from, @PathVariable(value = "to") String to);
+
 }

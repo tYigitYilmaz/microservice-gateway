@@ -14,14 +14,22 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+
     private int accountNumber;
+
+    @Column(name = "Account Balance RUB")
     private BigDecimal accountBalance;
-    private BigDecimal conversionMultiply;
+
+    @Column(name = "Account Balance USD")
+    private BigDecimal accountBalanceUsd;
+
     private UUID uuid = UUID.randomUUID();
 
     @JsonIgnore
     private int port;
-
+    @JsonIgnore
+    private BigDecimal conversionMultiply;
 
     public Account(int accountNumber, BigDecimal accountBalance) {
         this.accountNumber = accountNumber;
@@ -79,5 +87,13 @@ public class Account {
 
     public void setConversionMultiply(BigDecimal conversionMultiply) {
         this.conversionMultiply = conversionMultiply;
+    }
+
+    public BigDecimal getAccountBalanceUsd() {
+        return accountBalanceUsd;
+    }
+
+    public void setAccountBalanceUsd(BigDecimal accountBalanceUsd) {
+        this.accountBalanceUsd = accountBalanceUsd;
     }
 }

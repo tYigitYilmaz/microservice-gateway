@@ -10,4 +10,6 @@ public interface AccountService {
     BigDecimal findAccountBallance(int accountNumber);
 
     Account transactionAccountUpdate(int accountNumber, BigDecimal updatedBalance);
+
+    Account accounCurrencyExchange(int accountNumber, BigDecimal conversionMultiply, BigDecimal conversionAmount);
 }

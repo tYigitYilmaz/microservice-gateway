@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @Component
 public interface TransactionProxy {
 
-    @PostMapping(value ="/transaction-pack-service/transaction/deposit")
+    @PostMapping(value ="/transaction-pack-service/transaction")
     Account transactionConfirm(@RequestBody @Valid Account response);
 }
 
