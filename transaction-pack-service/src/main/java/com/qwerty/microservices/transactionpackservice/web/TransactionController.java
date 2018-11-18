@@ -109,18 +109,20 @@ public class TransactionController {
             Transaction updatedResponseFrom = accountProxy.accountMatcher(responseFromImpl);
             Transaction updatedResponseTo = accountProxy.accountMatcher(responseToImpl);
 
-            return transactionService.betweenAccounts(responseFromImpl.getTransactionNumber(),accountNumberFrom
+             transactionService.betweenAccounts(responseFromImpl.getTransactionNumber(),responseToImpl.getTransactionNumber(),accountNumberFrom
                     ,accountNumberTo,updatedResponseFrom.getAccountBalance(),updatedResponseTo.getAccountBalance()
                     ,BetweenAccounts,new BigDecimal(transactionAmount));
+            return updatedResponseFrom;
         }
 
         Transaction updatedResponseFrom = accountProxy.accountMatcher(responseFrom);
         Transaction updatedResponseTo = accountProxy.accountMatcher(responseTo);
 
 
-        return transactionService.betweenAccounts(responseFrom.getTransactionNumber(),accountNumberFrom
+        transactionService.betweenAccounts(responseFrom.getTransactionNumber(),responseTo.getTransactionNumber(),accountNumberFrom
                 ,accountNumberTo,updatedResponseFrom.getAccountBalance(),updatedResponseTo.getAccountBalance()
                 ,BetweenAccounts,new BigDecimal(transactionAmount));
+        return updatedResponseFrom;
     }
 
     @PostMapping(value ="/transaction")

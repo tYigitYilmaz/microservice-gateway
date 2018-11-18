@@ -64,22 +64,13 @@ public class TransactionServiceImpl implements TransactionService {
 
 
     @Override
-    public Transaction betweenAccounts(int transactionNumber, int accountNumberFrom, int accountNumberTo, BigDecimal accountBallanceFrom
+    public boolean betweenAccounts(int transactionNumberFrom,int transactionNumberTo, int accountNumberFrom, int accountNumberTo, BigDecimal accountBallanceFrom
             , BigDecimal accountBalanceTo, String transactionType, BigDecimal transactionAmount) {
 
-        Transaction transactionFrom = createTransaction(accountNumberFrom, accountBallanceFrom, transactionType, transactionAmount);
-        checkAccountBalance(transactionFrom.getAccountNumber(), transactionFrom.getAccountBalance(), transactionAmount);
-        withDraw(transactionNumber, transactionFrom.getAccountNumber(), transactionFrom.getAccountBalance()
-                , transactionType, transactionAmount);
+        withDraw(transactionNumberFrom,accountNumberFrom,accountBallanceFrom,transactionType,transactionAmount);
+        deposit(transactionNumberTo,accountNumberTo,accountBalanceTo,transactionType,transactionAmount);
 
-        Transaction transactionTo = createTransaction(accountNumberTo, accountBalanceTo, transactionType, transactionAmount);
-        deposit(transactionNumber, transactionTo.getAccountNumber(), transactionTo.getAccountBalance()
-                , transactionType, transactionAmount);
-
-        transactionDao.save(transactionFrom);
-        transactionDao.save(transactionTo);
-
-        return transactionFrom;
+        return true;
     }
 
     @Override

@@ -18,12 +18,13 @@ public class Account {
 
     private int accountNumber;
 
-    @Column(name = "Account Balance RUB")
+    @Column(name = "Acc_RUB")
     private BigDecimal accountBalance;
 
-    @Column(name = "Account Balance USD")
+    @Column(name = "Acc_USD")
     private BigDecimal accountBalanceUsd;
 
+    @JsonIgnore
     private UUID uuid = UUID.randomUUID();
 
     @JsonIgnore

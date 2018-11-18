@@ -82,8 +82,8 @@ public class AccountController {
         return responseConfig;
     }
 
-    @PostMapping(value = "/currency-feign/currencyExchabge/accountNumber/{accountNumber}/from/{from}/to/{to}/conversionAmount/{conversionAmount}")
-    public Account depositTransaction(
+    @PostMapping(value = "/currency-feign/currencyExchange/accountNumber/{accountNumber}/from/{from}/to/{to}/conversionAmount/{conversionAmount}")
+    public Account currencyExchange(
             @PathVariable(value = "accountNumber") int accountNumber
             , @PathVariable(value = "from") String from
             , @PathVariable(value = "to") String to

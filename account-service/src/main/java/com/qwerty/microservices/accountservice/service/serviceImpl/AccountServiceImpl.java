@@ -41,7 +41,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account accounCurrencyExchange(int accountNumber, BigDecimal conversionMultiply,BigDecimal conversionAmount) {
         Account account = accountDao.findByAccountNumber(accountNumber);
-        account.setAccountBalanceUsd(account.getConversionMultiply().multiply(conversionAmount));
+        account.setAccountBalanceUsd(account.getAccountBalanceUsd().add(account.getConversionMultiply().multiply(conversionAmount)));
         account.setAccountBalance(account.getAccountBalance().subtract(conversionAmount));
         accountDao.save(account);
         return null;
