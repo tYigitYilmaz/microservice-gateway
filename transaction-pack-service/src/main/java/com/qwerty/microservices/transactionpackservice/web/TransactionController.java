@@ -45,7 +45,7 @@ public class TransactionController {
         return transactionDao;
     }
 
-    @PostMapping(value = "/transaction-feign/transaction-deposit/{deposit}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
+   /* @PostMapping(value = "/transaction-feign/transaction-deposit/{deposit}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
     public Transaction depositTransaction( @PathVariable(value = "deposit") String deposit
             , @PathVariable(value = "accountNumber") int accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
@@ -65,10 +65,10 @@ public class TransactionController {
         Transaction updatedResponse = accountProxy.accountMatcher(response);
 
         return transactionService.deposit(response.getTransactionNumber(),accountNumber,
-                updatedResponse.getAccountBalance(),deposit,new BigDecimal(transactionAmount));
-    }
 
-    @PostMapping(value = "/transaction-feign/transaction-withdraw/{withdraw}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
+       updatedResponse.getAccountBalance(),deposit,new BigDecimal(transactionAmount));
+}*/
+   /*@PostMapping(value = "/transaction-feign/transaction-withdraw/{withdraw}/accountNumber/{accountNumber}/transactionAmount/{transactionAmount}")
     public Transaction withDraw( @PathVariable(value = "withdraw") String withdraw
             , @PathVariable(value = "accountNumber") int accountNumber
             , @PathVariable(value = "transactionAmount") String transactionAmount)
@@ -89,9 +89,10 @@ public class TransactionController {
 
         return transactionService.withDraw(response.getTransactionNumber(),accountNumber,
                 updatedResponse.getAccountBalance(),withdraw,new BigDecimal(transactionAmount));
-    }
+    }*/
 
-    @PostMapping(value = "/transaction-feign/transaction-BetweenAccounts/{BetweenAccounts}/accountNumberFrom/{accountNumberFrom}/accountNumberTo/{accountNumberTo}/transactionAmount/{transactionAmount}")
+
+   /* @PostMapping(value = "/transaction-feign/transaction-BetweenAccounts/{BetweenAccounts}/accountNumberFrom/{accountNumberFrom}/accountNumberTo/{accountNumberTo}/transactionAmount/{transactionAmount}")
     public Transaction betweenAccounts( @PathVariable(value = "BetweenAccounts") String BetweenAccounts
             , @PathVariable(value = "accountNumberFrom") int accountNumberFrom
             , @PathVariable(value = "accountNumberTo") int accountNumberTo
@@ -109,7 +110,7 @@ public class TransactionController {
             Transaction updatedResponseFrom = accountProxy.accountMatcher(responseFromImpl);
             Transaction updatedResponseTo = accountProxy.accountMatcher(responseToImpl);
 
-             transactionService.betweenAccounts(responseFromImpl.getTransactionNumber(),responseToImpl.getTransactionNumber(),accountNumberFrom
+            transactionService.betweenAccounts(responseFromImpl.getTransactionNumber(),responseToImpl.getTransactionNumber(),accountNumberFrom
                     ,accountNumberTo,updatedResponseFrom.getAccountBalance(),updatedResponseTo.getAccountBalance()
                     ,BetweenAccounts,new BigDecimal(transactionAmount));
             return updatedResponseFrom;
@@ -124,15 +125,55 @@ public class TransactionController {
                 ,BetweenAccounts,new BigDecimal(transactionAmount));
         return updatedResponseFrom;
     }
+*/
+    @PostMapping(value = "/transaction-feign/deposit")
+    public Transaction depositTransaction(@RequestBody @Valid Transaction request)
+    {
+        return transactionService.deposit(request.getTransactionNumber(),request.getAccountNumber(),
+                request.getAccountBalance(),"deposit",request.getAmount());
+    }
+
+    @PostMapping(value = "/transaction-feign/withdraw")
+    public Transaction withDraw( @RequestBody @Valid Transaction request)
+    {
+        return transactionService.withDraw(request.getTransactionNumber(),request.getAccountNumber(),
+                request.getAccountBalance(),"withdraw",request.getAmount());
+    }
+
+    @PostMapping(value = "/transaction-feign/BetweenAccounts")
+    public Transaction betweenAccounts( @RequestBody @Valid Transaction requestFrom,@RequestBody @Valid Transaction requestTo)
+    {
+        Transaction responseFrom = transactionDao.findFirstByAccountNumberOrderByTransactionNumberDesc(requestFrom.getAccountNumber());
+        Transaction responseTo = transactionDao.findFirstByAccountNumberOrderByTransactionNumberDesc(requestTo.getAccountNumber());
+
+        if (responseFrom==null|| responseTo==null){
+            Transaction responseFromImpl = transactionService.createTransaction(requestFrom.getAccountNumber(),new BigDecimal(0)
+                    ,"BetweenAccounts",requestFrom.getAmount());
+            Transaction responseToImpl = transactionService.createTransaction(requestTo.getAccountNumber(),new BigDecimal(0)
+                    ,"BetweenAccounts",requestFrom.getAmount());
+
+            Transaction updatedResponseFrom = accountProxy.accountMatcher(responseFromImpl);
+            Transaction updatedResponseTo = accountProxy.accountMatcher(responseToImpl);
+
+             transactionService.betweenAccounts(responseFromImpl.getTransactionNumber(),responseToImpl.getTransactionNumber(),requestFrom.getAccountNumber()
+                    ,requestTo.getAccountNumber(),updatedResponseFrom.getAccountBalance(),updatedResponseTo.getAccountBalance()
+                    ,"BetweenAccounts",requestFrom.getAmount());
+            return updatedResponseFrom;
+        }
+
+        Transaction updatedResponseFrom = accountProxy.accountMatcher(responseFrom);
+        Transaction updatedResponseTo = accountProxy.accountMatcher(responseTo);
+
+
+        transactionService.betweenAccounts(responseFrom.getTransactionNumber(),responseTo.getTransactionNumber(),requestFrom.getAccountNumber()
+                ,requestTo.getAccountNumber(),updatedResponseFrom.getAccountBalance(),updatedResponseTo.getAccountBalance()
+                ,"BetweenAccounts",requestFrom.getAmount());
+        return updatedResponseFrom;
+    }
 
     @PostMapping(value ="/transaction")
      public  @ResponseBody Transaction transactionConfirm(@RequestBody @Valid Transaction request){
 
         return transactionDao.findFirstByAccountNumberOrderByTransactionNumberDesc(request.getAccountNumber());
-    }
-
-    @GetMapping(value = "/transaction")
-    public String transaction() {
-        return "transaction";
     }
 }

@@ -17,8 +17,6 @@ public class AccountController {
 
     private AccountService accountService;
     private AccountDao accountDao;
-    private TransactionProxy transactionProxy;
-    private AccountCurrencyProxy accountCurrencyProxy;
 
     @Autowired
     public void setAccountService(AccountService accountService) {
@@ -38,23 +36,6 @@ public class AccountController {
         return accountDao;
     }
 
-    @Autowired
-    public void setTransactionProxy(TransactionProxy transactionProxy) {
-        this.transactionProxy = transactionProxy;
-    }
-
-    public TransactionProxy getTransactionProxy() {
-        return transactionProxy;
-    }
-
-    @Autowired
-    public void setAccountCurrencyProxy(AccountCurrencyProxy accountCurrencyProxy) {
-        this.accountCurrencyProxy = accountCurrencyProxy;
-    }
-
-    public AccountCurrencyProxy getAccountCurrencyProxy() {
-        return accountCurrencyProxy;
-    }
 
     @PostMapping(path = "/transaction")
     public @ResponseBody Account retrieveAccountBalance(@RequestBody @Valid Account request){
@@ -68,31 +49,20 @@ public class AccountController {
         return accountDao.findByAccountNumber(request.getAccountNumber());
     }
 
-    @PostMapping(value = "/transaction-feign/accountNumber/{accountNumber}")
-    public Account accountBalanceUpdate(
-            @PathVariable(value = "accountNumber") int accountNumber)
+    @PostMapping(value = "/updateAccountBalance")
+    public Account accountBalanceUpdate(@RequestBody @Valid Account request)
     {
-        Account response = accountDao.findByAccountNumber(accountNumber);
-
-        Account responseConfig = transactionProxy.transactionConfirm(response);
-
-        accountService.transactionAccountUpdate(responseConfig.getAccountNumber(),
-        responseConfig.getAccountBalance());
-
-        return responseConfig;
+        return accountService.transactionAccountUpdate(request.getAccountNumber());
     }
 
-    @PostMapping(value = "/currency-feign/currencyExchange/accountNumber/{accountNumber}/from/{from}/to/{to}/conversionAmount/{conversionAmount}")
+    @PostMapping(value = "/currency-feign/currencyExchange/from/{from}/to/{to}")
     public Account currencyExchange(
-            @PathVariable(value = "accountNumber") int accountNumber
+            @RequestBody @Valid Account request
             , @PathVariable(value = "from") String from
-            , @PathVariable(value = "to") String to
-            , @PathVariable(value = "conversionAmount") String conversionAmount)
+            , @PathVariable(value = "to") String to)
     {
-        Account responseConfig = accountCurrencyProxy.CurrencyConfirm(from,to);
-
-        accountService.accounCurrencyExchange(accountNumber,responseConfig.getConversionMultiply(),new BigDecimal(conversionAmount));
-
-        return responseConfig;
+        return  accountService.accounCurrencyExchange(request.getAccountNumber(),
+                request.getConversionMultiply(),
+                request.getConversionMultiply(),from,to);
     }
 }

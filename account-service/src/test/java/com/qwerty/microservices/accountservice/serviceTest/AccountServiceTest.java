@@ -1,3 +1,4 @@
+/*
 package com.qwerty.microservices.accountservice.serviceTest;
 
 import com.qwerty.microservices.accountservice.domain.Account;
@@ -47,3 +48,4 @@ class AccountServiceTest {
             assertEquals(expectedUsdBallance, actualUsdBallance);
     }
 }
+*/

@@ -2,6 +2,7 @@ package com.qwerty.microservices.transactionpackservice.service;
 
 import com.qwerty.microservices.transactionpackservice.domain.Transaction;
 import com.qwerty.microservices.transactionpackservice.domain.TransactionDao;
+import com.qwerty.microservices.transactionpackservice.web.AccountProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.math.BigDecimal;
 public class TransactionServiceImpl implements TransactionService {
 
     private TransactionDao transactionDao;
-
+    private AccountProxy accountProxy;
 
     @Autowired
     public void setTransactionDao(TransactionDao transactionDao) {
@@ -21,6 +22,16 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionDao getTransactionDao() {
         return transactionDao;
     }
+    @Autowired
+    private void SetAccountProxy(AccountProxy accountProxy){
+        this.accountProxy = accountProxy;
+    }
+
+
+    private AccountProxy getAccountProxy(){
+        return accountProxy;
+    }
+
 
 
     @Override
@@ -43,20 +54,22 @@ public class TransactionServiceImpl implements TransactionService {
 
 
     @Override
-    public Transaction deposit(int transactionNumber, int accountNumber, BigDecimal accountBallance, String transactionType, BigDecimal transactionAmount) {
+    public Transaction deposit(int transactionNumber, int accountNumber, BigDecimal accountBalance, String transactionType, BigDecimal transactionAmount) {
 
-        Transaction transaction = createTransaction(accountNumber, accountBallance, transactionType, transactionAmount);
-        transaction.setAccountBalance(accountBallance.add(transactionAmount));
+        Transaction transaction = createTransaction(accountNumber, accountBalance, "deposit", transactionAmount);
+        Transaction updatedResponse = accountProxy.accountMatcher(transaction);
+        transaction.setAccountBalance(updatedResponse.getAccountBalance().add(transactionAmount));
         transactionDao.save(transaction);
-
         return transaction;
     }
+
 
     @Override
     public Transaction withDraw(int transactionNumber, int accountNumber, BigDecimal accountBallance, String transactionType, BigDecimal transactionAmount) {
         Transaction transaction = createTransaction(accountNumber, accountBallance, transactionType, transactionAmount.multiply(BigDecimal.valueOf(-1)));
-        checkAccountBalance(accountNumber, accountBallance, transactionAmount);
-        transaction.setAccountBalance(accountBallance.subtract(transactionAmount));
+        Transaction updatedResponse = accountProxy.accountMatcher(transaction);
+        checkAccountBalance(updatedResponse.getAccountNumber(), updatedResponse.getAccountBalance(), transactionAmount);
+        transaction.setAccountBalance(updatedResponse.getAccountBalance().subtract(transactionAmount));
         transactionDao.save(transaction);
 
         return transaction;

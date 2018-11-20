@@ -9,7 +9,7 @@ public interface AccountService {
 
     BigDecimal findAccountBallance(int accountNumber);
 
-    Account transactionAccountUpdate(int accountNumber, BigDecimal updatedBalance);
+    Account transactionAccountUpdate(int accountNumber);
 
-    Account accounCurrencyExchange(int accountNumber, BigDecimal conversionMultiply, BigDecimal conversionAmount);
+    Account accounCurrencyExchange(int accountNumber, BigDecimal conversionMultiply, BigDecimal conversionAmount, String from,String to);
 }
