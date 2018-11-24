@@ -21,10 +21,9 @@ public class ExchangeValueController {
         return exchangeValueDao;
     }
 
-
-    @PostMapping(value ="/currency-exchange")
-    public @ResponseBody ExchangeValue retrieveAccountCurrency(@RequestBody @Valid ExchangeValue request){
-
-        return exchangeValueDao.findByFromAndTo(request.getFrom(),request.getTo());
+    @PostMapping(value ="/currency-exchange/from/{from}/to/{to}")
+    public ExchangeValue retrieveAccountCurrency(@PathVariable(value = "from") String from
+            , @PathVariable(value = "to") String to){
+        return exchangeValueDao.findByFromAndTo(from,to);
     }
 }

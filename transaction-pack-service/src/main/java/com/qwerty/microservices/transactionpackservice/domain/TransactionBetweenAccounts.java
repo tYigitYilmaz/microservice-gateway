@@ -30,7 +30,7 @@ public class TransactionBetweenAccounts {
     public TransactionBetweenAccounts() {
     }
 
-    public TransactionBetweenAccounts(int accountNumberFrom, int accountNumberTo, int transactionNumberBA, BigDecimal accountBalanceFrom, BigDecimal accountBalanceTo, String description, BigDecimal amount, UUID uuid) {
+    public TransactionBetweenAccounts(int accountNumberFrom, int accountNumberTo, int transactionNumberBA, BigDecimal accountBalanceFrom, BigDecimal accountBalanceTo, String description, BigDecimal amount) {
         this.accountNumberFrom = accountNumberFrom;
         this.accountNumberTo = accountNumberTo;
         this.transactionNumberBA = transactionNumberBA;
@@ -38,7 +38,6 @@ public class TransactionBetweenAccounts {
         this.accountBalanceTo = accountBalanceTo;
         this.description = description;
         this.amount = amount;
-        this.uuid = uuid;
     }
 
     public Long getId() {

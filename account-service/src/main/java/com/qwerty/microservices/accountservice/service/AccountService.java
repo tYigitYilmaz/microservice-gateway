@@ -7,9 +7,12 @@ import java.util.List;
 
 public interface AccountService {
 
-    BigDecimal findAccountBallance(int accountNumber);
+    BigDecimal findAccountBalance(int accountNumber);
 
     Account transactionAccountUpdate(int accountNumber);
 
-    Account accounCurrencyExchange(int accountNumber, BigDecimal conversionMultiply, BigDecimal conversionAmount, String from,String to);
+    Account accountCurrencyExchangeUpdate(Account account,String from,String to);
+
+    Account createAccount(int accountNumber);
+
 }

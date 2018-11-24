@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import javax.validation.Valid;
 
 @FeignClient(name = "netflix-zuul-gateway")
-@RibbonClient(name = "netflix-zuul-gateway")
+@RibbonClient(name = "currency-exchange-service")
 @Component
 public interface AccountCurrencyProxy {
 
-    @PostMapping(value ="/currency-exchange-service/currency-exchange")
+    @PostMapping(value ="/currency-exchange-service/currency-exchange/from/{from}/to/{to}")
     Account CurrencyConfirm
-            (@PathVariable(value = "from") String from, @PathVariable(value = "to") String to);
+            (@PathVariable(value = "from") String from
+             , @PathVariable(value = "to") String to);
 
 }

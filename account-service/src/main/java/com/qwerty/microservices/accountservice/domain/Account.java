@@ -24,23 +24,22 @@ public class Account {
     @Column(name = "Acc_USD")
     private BigDecimal accountBalanceUsd;
 
-    @JsonIgnore
     private UUID uuid = UUID.randomUUID();
 
     @JsonIgnore
     private int port;
-    @JsonIgnore
     private BigDecimal conversionMultiply;
+    private BigDecimal conversionAmount;
 
-    public Account(int accountNumber, BigDecimal accountBalance) {
+
+    public Account(int accountNumber, BigDecimal accountBalance, BigDecimal accountBalanceUsd) {
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
+        this.accountBalanceUsd = accountBalanceUsd;
     }
 
     public Account(){
     }
-
-
 
     public Long getId() {
         return id;
@@ -96,5 +95,24 @@ public class Account {
 
     public void setAccountBalanceUsd(BigDecimal accountBalanceUsd) {
         this.accountBalanceUsd = accountBalanceUsd;
+    }
+
+    public BigDecimal getConversionAmount() {
+        return conversionAmount;
+    }
+
+    public void setConversionAmount(BigDecimal conversionAmount) {
+        this.conversionAmount = conversionAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", accountNumber=" + accountNumber +
+                ", accountBalance=" + accountBalance +
+                ", accountBalanceUsd=" + accountBalanceUsd +
+                ", uuid=" + uuid +
+                '}';
     }
 }

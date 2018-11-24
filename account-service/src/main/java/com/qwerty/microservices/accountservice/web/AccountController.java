@@ -38,31 +38,34 @@ public class AccountController {
 
 
     @PostMapping(path = "/transaction")
-    public @ResponseBody Account retrieveAccountBalance(@RequestBody @Valid Account request){
+    public @ResponseBody
+    Account retrieveAccountBalance(@RequestBody @Valid Account request) {
 
         return accountDao.findByAccountNumber(request.getAccountNumber());
     }
 
-    @PostMapping(value ="/account-service/currency-exchange")
-    public @ResponseBody Account retrieveAccountCurrency(@RequestBody @Valid Account request){
+    @PostMapping(value = "/account-service/currency-exchange")
+    public @ResponseBody
+    Account retrieveAccountCurrency(@RequestBody @Valid Account request) {
 
         return accountDao.findByAccountNumber(request.getAccountNumber());
     }
 
     @PostMapping(value = "/updateAccountBalance")
-    public Account accountBalanceUpdate(@RequestBody @Valid Account request)
-    {
+    public Account accountBalanceUpdate(@RequestBody @Valid Account request) {
         return accountService.transactionAccountUpdate(request.getAccountNumber());
     }
 
-    @PostMapping(value = "/currency-feign/currencyExchange/from/{from}/to/{to}")
+    @PostMapping(value = "/currency-feign/currency-exchange/from/{from}/to/{to}")
     public Account currencyExchange(
-            @RequestBody @Valid Account request
-            , @PathVariable(value = "from") String from
-            , @PathVariable(value = "to") String to)
-    {
-        return  accountService.accounCurrencyExchange(request.getAccountNumber(),
-                request.getConversionMultiply(),
-                request.getConversionMultiply(),from,to);
+            @RequestBody @Valid Account request,@PathVariable(value = "from") String from
+            ,@PathVariable(value = "to") String to) {
+        return accountService.accountCurrencyExchangeUpdate(request,from,to);
+    }
+
+    @PostMapping(value = "/account/createAccount")
+    public Account createAccount(
+            @RequestBody @Valid Account request) {
+        return accountService.createAccount(request.getAccountNumber());
     }
 }

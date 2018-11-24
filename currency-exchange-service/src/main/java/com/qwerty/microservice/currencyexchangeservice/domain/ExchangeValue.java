@@ -16,18 +16,18 @@ public class ExchangeValue {
     private String from;
     @Column(name="currency_to")
     private String to;
-    private BigDecimal conversionMultiple;
+    private BigDecimal conversionMultiply;
     private int port;
 
     public ExchangeValue(){
 
     }
 
-    public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple) {
+    public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiply) {
         this.id = id;
         this.from = from;
         this.to = to;
-        this.conversionMultiple = conversionMultiple;
+        this.conversionMultiply = conversionMultiply;
   }
 
     public Long getId() {
@@ -54,12 +54,12 @@ public class ExchangeValue {
         this.to = to;
     }
 
-    public BigDecimal getConversionMultiple() {
-        return conversionMultiple;
+    public BigDecimal getConversionMultiply() {
+        return conversionMultiply;
     }
 
     public void setConversionMultiple(BigDecimal conversionMultiple) {
-        this.conversionMultiple = conversionMultiple;
+        this.conversionMultiply = conversionMultiply;
     }
 
     public int getPort() {

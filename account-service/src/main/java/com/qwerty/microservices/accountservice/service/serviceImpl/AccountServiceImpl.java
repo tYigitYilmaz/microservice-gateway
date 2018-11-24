@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.validation.Valid;
 import java.math.BigDecimal;
 
 @Service
@@ -38,11 +40,6 @@ public class AccountServiceImpl implements AccountService {
         return transactionProxy;
     }
 
-    @Override
-    public BigDecimal findAccountBallance(int accountNumber) {
-        Account account = accountDao.findByAccountNumber(accountNumber);
-        return account.getAccountBalance();
-    }
     @Autowired
     public void setAccountCurrencyProxy(AccountCurrencyProxy accountCurrencyProxy) {
         this.accountCurrencyProxy = accountCurrencyProxy;
@@ -53,6 +50,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public BigDecimal findAccountBalance(int accountNumber) {
+        Account account = accountDao.findByAccountNumber(accountNumber);
+        return account.getAccountBalance();
+    }
+    @Override
     public Account transactionAccountUpdate(int accountNumber) {
        Account account = accountDao.findByAccountNumber(accountNumber);
        Account responseConfig = transactionProxy.transactionConfirm(account);
@@ -62,14 +64,20 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    @PostMapping(value = "/currency-feign/currencyExchange/from/{from}/to/{to}")
-    public Account accounCurrencyExchange(int accountNumber, BigDecimal conversionMultiply,BigDecimal conversionAmount
-            ,@PathVariable(value = "from") String from
-            , @PathVariable(value = "to") String to) {
-        Account account = accountDao.findByAccountNumber(accountNumber);
+    public Account accountCurrencyExchangeUpdate(Account account,String from,String to) {
+        Account accountImp = accountDao.findByAccountNumber(account.getAccountNumber());
         Account responseConfig = accountCurrencyProxy.CurrencyConfirm(from,to);
-        account.setAccountBalanceUsd(account.getAccountBalanceUsd().add(responseConfig.getConversionMultiply().multiply(conversionAmount)));
-        account.setAccountBalance(account.getAccountBalance().subtract(conversionAmount));
+        accountImp.setAccountBalanceUsd(accountImp.getAccountBalanceUsd()
+                .add(responseConfig.getConversionMultiply()
+                        .multiply(account.getConversionAmount())));
+        accountImp.setAccountBalance(accountImp.getAccountBalance().subtract(account.getConversionAmount()));
+        accountDao.save(accountImp);
+        return accountImp;
+    }
+
+    @Override
+    public Account createAccount(int accountNumber) {
+        Account account = new Account(accountNumber,new BigDecimal(0),new BigDecimal(0));
         accountDao.save(account);
         return null;
     }

@@ -1,5 +1,6 @@
-package com.qwerty.microservices.transactionpackservice.domain;
+package com.qwerty.microservices.transactionpackservice.domain.repository;
 
+import com.qwerty.microservices.transactionpackservice.domain.Transaction;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
