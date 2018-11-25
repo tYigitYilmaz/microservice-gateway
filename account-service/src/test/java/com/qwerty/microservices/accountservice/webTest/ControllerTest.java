@@ -56,8 +56,8 @@ public class ControllerTest {
     private static final int ACCOUNT_NUMBER = 1;
     private static final BigDecimal ACCOUNT_BALANCE = BigDecimal.valueOf(65);
     private static final BigDecimal ACCOUNT_BALANCE_USD = BigDecimal.valueOf(0);
-    private static final BigDecimal CONVERSIOAN_MULTIPLY = BigDecimal.valueOf(0.21);
-
+    private static final BigDecimal CONVERSION_MULTIPLY = BigDecimal.valueOf(0.21);
+    private static final BigDecimal CONVERSION_AMOUNT = BigDecimal.valueOf(222);
 
     @BeforeEach
     void setUp() throws Exception {
@@ -79,20 +79,20 @@ public class ControllerTest {
         String from = "RUB";
         String to = "USD";
 
+
         RequestBuilder request = MockMvcRequestBuilders
                 .post("/currency-feign/currency-exchange/from/{from}/to/{to}",from,to)
-                .param("$.accountNumber", String.valueOf(ACCOUNT_NUMBER))
+                .sessionAttr("account",this.accountDto)
                 .accept(MediaType.APPLICATION_JSON_UTF8_VALUE);
 
 
         MvcResult response = mockMvc.perform(request)
                  .andExpect(status().isOk())
                  .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                 .andExpect(jsonPath("$.accountNumber").value(ACCOUNT_NUMBER))
                  .andExpect(jsonPath("$.accountBalance").value(ACCOUNT_BALANCE))
                  .andExpect(jsonPath("$.accountBalanceUsd").value(ACCOUNT_BALANCE_USD))
+                 .andExpect(jsonPath("$.conversionMultiply").value(CONVERSION_MULTIPLY))
                  .andReturn();
-        response.getResponse();
     }
 
     @Test
@@ -106,7 +106,7 @@ public class ControllerTest {
         MvcResult response = mockMvc.perform( request)
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.conversionMultiply").value(CONVERSIOAN_MULTIPLY))
+                .andExpect(jsonPath("$.conversionMultiply").value(CONVERSION_MULTIPLY))
                 .andReturn();
 
         when(accountCurrencyProxy.CurrencyConfirm("RUB","USD")).thenReturn((Account) response);

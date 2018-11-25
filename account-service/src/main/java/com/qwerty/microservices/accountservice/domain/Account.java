@@ -24,6 +24,9 @@ public class Account {
     @Column(name = "Acc_USD")
     private BigDecimal accountBalanceUsd;
 
+    @Column(name = "Acc_EUR")
+    private BigDecimal accountBalanceEur;
+
     private UUID uuid = UUID.randomUUID();
 
     @JsonIgnore
@@ -31,11 +34,11 @@ public class Account {
     private BigDecimal conversionMultiply;
     private BigDecimal conversionAmount;
 
-
-    public Account(int accountNumber, BigDecimal accountBalance, BigDecimal accountBalanceUsd) {
+    public Account(int accountNumber, BigDecimal accountBalance, BigDecimal accountBalanceUsd, BigDecimal accountBalanceEur) {
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
         this.accountBalanceUsd = accountBalanceUsd;
+        this.accountBalanceEur = accountBalanceEur;
     }
 
     public Account(){
@@ -95,6 +98,14 @@ public class Account {
 
     public void setAccountBalanceUsd(BigDecimal accountBalanceUsd) {
         this.accountBalanceUsd = accountBalanceUsd;
+    }
+
+    public BigDecimal getAccountBalanceEur() {
+        return accountBalanceEur;
+    }
+
+    public void setAccountBalanceEur(BigDecimal accountBalanceEur) {
+        this.accountBalanceEur = accountBalanceEur;
     }
 
     public BigDecimal getConversionAmount() {

@@ -67,17 +67,29 @@ public class AccountServiceImpl implements AccountService {
     public Account accountCurrencyExchangeUpdate(Account account,String from,String to) {
         Account accountImp = accountDao.findByAccountNumber(account.getAccountNumber());
         Account responseConfig = accountCurrencyProxy.CurrencyConfirm(from,to);
-        accountImp.setAccountBalanceUsd(accountImp.getAccountBalanceUsd()
-                .add(responseConfig.getConversionMultiply()
-                        .multiply(account.getConversionAmount())));
+        if (to.equals("USD")) {
+            accountImp.setAccountBalanceUsd(accountImp.getAccountBalanceUsd()
+                    .add(responseConfig.getConversionMultiply()
+                            .multiply(account.getConversionAmount())));
+
         accountImp.setAccountBalance(accountImp.getAccountBalance().subtract(account.getConversionAmount()));
         accountDao.save(accountImp);
+        return accountImp;
+        }else if (to.equals("EUR")){
+            accountImp.setAccountBalanceEur(accountImp.getAccountBalanceEur()
+                    .add(responseConfig.getConversionMultiply()
+                            .multiply(account.getConversionAmount())));
+
+            accountImp.setAccountBalance(accountImp.getAccountBalance().subtract(account.getConversionAmount()));
+            accountDao.save(accountImp);
+            return accountImp;
+        }
         return accountImp;
     }
 
     @Override
     public Account createAccount(int accountNumber) {
-        Account account = new Account(accountNumber,new BigDecimal(0),new BigDecimal(0));
+        Account account = new Account(accountNumber,new BigDecimal(0),new BigDecimal(0),new BigDecimal(0));
         accountDao.save(account);
         return null;
     }
