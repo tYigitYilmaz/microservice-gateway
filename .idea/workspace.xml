@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0a42e20-55ab-45b4-b5d1-bf35bdfa6b00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/currency-exchange-service/src/test/java/com/qwerty/microservice/currencyexchangeservice/webTest/ExchangeValueControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction-pack-service/src/test/java/com/qwerty/microservices/transactionpackservice/webTest/TransactionControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountCurrencyProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountCurrencyProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/TransactionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/TransactionProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/serviceTest/AccountServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/webTest/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/webTest/AccountControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/domain/ExchangeValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/domain/ExchangeValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/web/ExchangeValueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/web/ExchangeValueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency-exchange-service/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix-zuul-gateway/src/test/java/com/qwerty/microservices/netflixzuulgateway/ControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/AccountProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/AccountProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction-pack-service/src/test/java/com/qwerty/microservices/transactionpackservice/webTest/TransactionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/transaction-pack-service/src/test/java/com/qwerty/microservices/transactionpackservice/webTest/TransactionControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="323">
               <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
             </state>
           </provider>
@@ -77,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/webTest/AccountControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="153">
               <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
             </state>
           </provider>
@@ -86,8 +70,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/test/java/com/qwerty/microservices/transactionpackservice/webTest/TransactionControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="82" column="53" lean-forward="true" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+            <state relative-caret-position="204">
+              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1114">
+              <caret line="132" column="1" lean-forward="true" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -625,7 +621,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/otunckaya/Desktop/JavaProject/bank-application/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543268526943" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543269074497" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -664,7 +660,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.NetflixEurekaNamingServerApplication">
+  <component name="RunManager" selected="JUnit.TransactionControllerTest.depositTransaction">
     <configuration name="AccountControllerTest.currencyExchange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="account-service" />
       <extension name="coverage">
@@ -835,7 +831,7 @@
       <workItem from="1543095406398" duration="634000" />
       <workItem from="1543098757244" duration="6163000" />
       <workItem from="1543229461749" duration="20317000" />
-      <workItem from="1543264711223" duration="3858000" />
+      <workItem from="1543264711223" duration="4825000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1542005801302</created>
@@ -998,25 +994,17 @@
       <option name="project" value="LOCAL" />
       <updated>1543176568837</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update test #18">
+      <created>1543268630131</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1543268630131</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.26 at 23h 02m 16s.xml">
-      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.26 at 23h 17m 19s.xml">
-      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.26 at 23h 20m 50s.xml">
-      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 09m 54s.xml">
-      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 12m 52s.xml">
-      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 13m 41s.xml">
       <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
     </history-entry>
@@ -1032,9 +1020,24 @@
     <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 39m 19s.xml">
       <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 47m 35s.xml">
+      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 49m 34s.xml">
+      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 50m 09s.xml">
+      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 50m 52s.xml">
+      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TransactionControllerTest_depositTransaction - 2018.11.27 at 00h 51m 27s.xml">
+      <configuration name="TransactionControllerTest.depositTransaction" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296724000" />
+    <option name="totallyTimeSpent" value="297691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1107,7 +1110,8 @@
     <MESSAGE value="Update #15" />
     <MESSAGE value="Update #16" />
     <MESSAGE value="Update #17" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update #17" />
+    <MESSAGE value="Update test #18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update test #18" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/currency-exchange-service/src/main/java/com/qwerty/microservice/currencyexchangeservice/service/serviceImpl/ExchangeValueServiceImpl.java" />
@@ -1373,16 +1377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="927">
-          <caret line="132" column="1" lean-forward="true" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1456,6 +1450,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1114">
+          <caret line="132" column="1" lean-forward="true" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/webTest/AccountControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
@@ -1466,31 +1484,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="323">
           <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/webTest/AccountControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/test/java/com/qwerty/microservices/transactionpackservice/webTest/TransactionControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="82" column="53" lean-forward="true" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+        <state relative-caret-position="204">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
