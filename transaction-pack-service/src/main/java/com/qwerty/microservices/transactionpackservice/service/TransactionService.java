@@ -11,13 +11,13 @@ public interface TransactionService {
 
     Transaction createTransaction(int accountNumber,BigDecimal transactionAmount);
 
-    Transaction deposit(int accountNumber, BigDecimal transactionAmount);
+    Transaction deposit(Transaction transaction);
 
-    Transaction withDraw(int accountNumber,BigDecimal transactionAmount);
+    Transaction withDraw(Transaction transaction);
 
     TransactionBetweenAccounts createTransactionBA(int accountNumberFrom, int accountNumberTo,BigDecimal transactionAmount);
 
-    TransactionBetweenAccounts betweenAccounts(int accountNumberFrom,int accountNumberTo,BigDecimal transactionAmount);
+    TransactionBetweenAccounts betweenAccounts(TransactionBetweenAccounts transactionBetweenAccounts);
 
     boolean checkAccountBalance(BigDecimal accountBalance, BigDecimal amount);
 

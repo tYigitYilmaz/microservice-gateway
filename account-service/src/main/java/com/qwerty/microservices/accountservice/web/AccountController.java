@@ -5,6 +5,7 @@ import com.qwerty.microservices.accountservice.domain.Account;
 import com.qwerty.microservices.accountservice.domain.repository.AccountDao;
 import com.qwerty.microservices.accountservice.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 
 
 @RestController
+@RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class AccountController {
 
 
@@ -37,33 +39,38 @@ public class AccountController {
     }
 
 
-    @PostMapping(path = "/transaction")
+    @RequestMapping(path = "/transaction",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public @ResponseBody
     Account retrieveAccountBalance(@RequestBody @Valid Account request) {
 
         return accountDao.findByAccountNumber(request.getAccountNumber());
     }
 
-    @PostMapping(value = "/account-service/currency-exchange")
+    @RequestMapping(value = "/account-service/currency-exchange",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public @ResponseBody
     Account retrieveAccountCurrency(@RequestBody @Valid Account request) {
 
         return accountDao.findByAccountNumber(request.getAccountNumber());
     }
 
-    @PostMapping(value = "/updateAccountBalance")
+    @RequestMapping(value = "/updateAccountBalance",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Account accountBalanceUpdate(@RequestBody @Valid Account request) {
         return accountService.transactionAccountUpdate(request.getAccountNumber());
     }
 
-    @PostMapping(value = "/currency-feign/currency-exchange/from/{from}/to/{to}")
+    @RequestMapping(value = "/currency-feign/currency-exchange/from/{from}/to/{to}",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Account currencyExchange(
             @RequestBody @Valid Account request,@PathVariable(value = "from") String from
             ,@PathVariable(value = "to") String to) {
         return accountService.accountCurrencyExchangeUpdate(request,from,to);
     }
 
-    @PostMapping(value = "/account/createAccount")
+    @RequestMapping(value = "/account/createAccount",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Account createAccount(
             @RequestBody @Valid Account request) {
         return accountService.createAccount(request.getAccountNumber());

@@ -92,40 +92,43 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Transaction deposit(int accountNumber, BigDecimal transactionAmount) {
+    public Transaction deposit(Transaction transaction) {
 
-        Transaction transaction = createTransaction(accountNumber, transactionAmount);
-        Transaction updatedResponse = accountProxy.accountMatcher(transaction);
-        transaction.setAccountBalance(updatedResponse.getAccountBalance().add(transactionAmount));
-        transaction.setDescription("deposit");
-        transactionDao.save(transaction);
-        return transaction;
+        Transaction deposit = createTransaction(transaction.getAccountNumber(), transaction.getAmount());
+        Transaction updatedResponse = accountProxy.accountMatcher(deposit);
+        deposit.setAccountBalance(updatedResponse.getAccountBalance().add(deposit.getAmount()));
+        deposit.setDescription("deposit");
+        transactionDao.save(deposit);
+        return deposit;
     }
 
 
     @Override
-    public Transaction withDraw(int accountNumber, BigDecimal transactionAmount) {
-        Transaction transaction = createTransaction(accountNumber, transactionAmount.multiply(BigDecimal.valueOf(-1)));
-        Transaction updatedResponse = accountProxy.accountMatcher(transaction);
-        if (checkAccountBalance(updatedResponse.getAccountBalance(), transactionAmount)){
-            transaction.setAccountBalance(updatedResponse.getAccountBalance().subtract(transactionAmount));
-            transaction.setDescription("withdraw");
-            transactionDao.save(transaction);
-            return transaction;
+    public Transaction withDraw(Transaction transaction) {
+        Transaction withDraw = createTransaction(transaction.getAccountNumber(), transaction.getAmount().multiply(BigDecimal.valueOf(-1)));
+        Transaction updatedResponse = accountProxy.accountMatcher(withDraw);
+        if (checkAccountBalance(updatedResponse.getAccountBalance(), withDraw.getAmount())){
+            withDraw.setAccountBalance(updatedResponse.getAccountBalance().subtract(withDraw.getAmount()));
+            withDraw.setDescription("withdraw");
+            transactionDao.save(withDraw);
+            return withDraw;
         }
-        return transaction;
+        return withDraw;
     }
 
 
     @Override
-    public TransactionBetweenAccounts betweenAccounts(int accountNumberFrom, int accountNumberTo,BigDecimal transactionAmount) {
-
-        withDraw(accountNumberFrom,transactionAmount);
-        deposit(accountNumberTo,transactionAmount);
-        TransactionBetweenAccounts transactionBetweenAccounts = createTransactionBA(accountNumberFrom,accountNumberTo,transactionAmount);
-        transactionBetweenAccounts.setDescription("BetweenAccounts");
-        transactionBetweenAccDao.save(transactionBetweenAccounts);
-        return  transactionBetweenAccounts;
+    public TransactionBetweenAccounts betweenAccounts(TransactionBetweenAccounts transactionBetweenAccounts) {
+        Transaction transactionFrom = createTransaction(transactionBetweenAccounts.getAccountNumberFrom(),transactionBetweenAccounts.getAmount());
+        Transaction transactionTo = createTransaction(transactionBetweenAccounts.getAccountNumberTo(),transactionBetweenAccounts.getAmount());
+        withDraw(transactionFrom);
+        deposit(transactionTo);
+        TransactionBetweenAccounts transactionBA =
+                createTransactionBA(transactionBetweenAccounts.getAccountNumberFrom()
+                        ,transactionBetweenAccounts.getAccountNumberTo(),transactionBetweenAccounts.getAmount());
+        transactionBA.setDescription("BetweenAccounts");
+        transactionBetweenAccDao.save(transactionBA);
+        return  transactionBA;
     }
 
     @Override

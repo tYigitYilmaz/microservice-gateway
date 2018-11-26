@@ -5,12 +5,14 @@ import com.qwerty.microservices.transactionpackservice.domain.TransactionBetween
 import com.qwerty.microservices.transactionpackservice.domain.repository.TransactionDao;
 import com.qwerty.microservices.transactionpackservice.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
 
 @RestController
+@RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class TransactionController {
 
     private TransactionService transactionService;
@@ -46,28 +48,29 @@ public class TransactionController {
     }
 
 
-    @PostMapping(value = "/transaction-feign/deposit")
+    @RequestMapping(value = "/transaction-feign/deposit",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Transaction depositTransaction(@RequestBody @Valid Transaction request)
     {
-        return transactionService.deposit(request.getAccountNumber()
-                ,request.getAmount());
+        return transactionService.deposit(request);
     }
 
-    @PostMapping(value = "/transaction-feign/withdraw")
+    @RequestMapping(value = "/transaction-feign/withdraw",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Transaction withDraw( @RequestBody @Valid Transaction request)
     {
-        return transactionService.withDraw(request.getAccountNumber()
-                ,request.getAmount());
+        return transactionService.withDraw(request);
     }
 
-    @PostMapping(value = "/transaction-feign/BetweenAccounts")
+    @RequestMapping(value = "/transaction-feign/BetweenAccounts",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public TransactionBetweenAccounts betweenAccounts( @RequestBody @Valid TransactionBetweenAccounts request)
     {
-        return transactionService.betweenAccounts(request.getAccountNumberFrom()
-                ,request.getAccountNumberTo(),request.getAmount());
+        return transactionService.betweenAccounts(request);
     }
 
-    @PostMapping(value ="/transaction")
+    @RequestMapping(value ="/transaction",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
      public  @ResponseBody Transaction transactionConfirm(@RequestBody @Valid Transaction request){
 
         return transactionDao.findFirstByAccountNumberOrderByTransactionNumberDesc(request.getAccountNumber());
