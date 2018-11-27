@@ -65,14 +65,14 @@ public class TransactionControllerTest {
     private static final int ACCOUNT_NUMBER = 1;
     private static final int ACCOUNT_NUMBER_FROM = 1;
     private static final int ACCOUNT_NUMBER_TO = 2;
-    private static final BigDecimal TRANSACTION_BALANCE= BigDecimal.valueOf(1);
+    private static final BigDecimal ACCOUNT_BALANCE= BigDecimal.valueOf(1);
+    private static final BigDecimal ACCOUNT_BALANCE_FROM= BigDecimal.valueOf(1);
+    private static final BigDecimal ACCOUNT_BALANCE_TO= BigDecimal.valueOf(1);
     private static final BigDecimal TRANSACTION_AMOUNT = BigDecimal.valueOf(1);
 
     @Test
     public void depositTransaction() throws Exception{
-        Transaction resp = transactionService.createTransaction(ACCOUNT_NUMBER,TRANSACTION_AMOUNT);
-
-
+        Transaction resp = new Transaction(TRANSACTION_NUMBER,ACCOUNT_NUMBER,ACCOUNT_BALANCE,"Transaction",TRANSACTION_AMOUNT);
 
         when(transactionService.deposit(any(Transaction.class))).thenReturn(resp);
 
@@ -84,16 +84,16 @@ public class TransactionControllerTest {
 
         MvcResult response = mockMvc.perform(request)
                 .andExpect(status().isOk())
-                /*.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.transactionNumber").value(TRANSACTION_NUMBER))*/
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                .andExpect(jsonPath("$.transactionNumber").value(TRANSACTION_NUMBER))
                 .andExpect(jsonPath("$.accountNumber").value(ACCOUNT_NUMBER))
-                .andExpect(jsonPath("$.transactionAmount").value(TRANSACTION_AMOUNT))
+                .andExpect(jsonPath("$.amount").value(TRANSACTION_AMOUNT))
                 .andReturn();
     }
 
     @Test
     public void withdrawTransaction() throws Exception{
-        Transaction resp = transactionService.createTransaction(ACCOUNT_NUMBER,TRANSACTION_AMOUNT);
+        Transaction resp = new Transaction(TRANSACTION_NUMBER,ACCOUNT_NUMBER,ACCOUNT_BALANCE,"Transaction",TRANSACTION_AMOUNT);
 
         when(transactionService.withDraw(any(Transaction.class))).thenReturn(resp);
 
@@ -108,12 +108,13 @@ public class TransactionControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.transactionNumber").value(TRANSACTION_NUMBER))
                 .andExpect(jsonPath("$.accountNumber").value(ACCOUNT_NUMBER))
-                .andExpect(jsonPath("$.transactionAmount").value(TRANSACTION_AMOUNT))
+                .andExpect(jsonPath("$.amount").value(TRANSACTION_AMOUNT))
                 .andReturn();
     }
     @Test
     public void betweenAccountTransaction() throws Exception{
-        TransactionBetweenAccounts resp = transactionService.createTransactionBA(ACCOUNT_NUMBER_FROM,ACCOUNT_NUMBER_TO,TRANSACTION_AMOUNT);
+        TransactionBetweenAccounts resp = new TransactionBetweenAccounts(ACCOUNT_NUMBER_FROM,ACCOUNT_NUMBER_TO,TRANSACTION_NUMBER
+                ,ACCOUNT_BALANCE_FROM,ACCOUNT_BALANCE_TO,"BetweenAccounts",TRANSACTION_AMOUNT);
 
         when(transactionService.betweenAccounts(any(TransactionBetweenAccounts.class))).thenReturn(resp);
 
@@ -126,10 +127,10 @@ public class TransactionControllerTest {
         MvcResult response = mockMvc.perform(request)
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.transactionNumber").value(TRANSACTION_NUMBER))
+                .andExpect(jsonPath("$.transactionNumberBA").value(TRANSACTION_NUMBER))
                 .andExpect(jsonPath("$.accountNumberFrom").value(ACCOUNT_NUMBER_FROM))
                 .andExpect(jsonPath("$.accountNumberTo").value(ACCOUNT_NUMBER_TO))
-                .andExpect(jsonPath("$.transactionAmount").value(TRANSACTION_AMOUNT))
+                .andExpect(jsonPath("$.amount").value(TRANSACTION_AMOUNT))
                 .andReturn();
     }
 }

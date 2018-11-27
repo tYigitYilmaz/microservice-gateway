@@ -50,7 +50,8 @@ public class TransactionController {
 
     @RequestMapping(value = "/transaction-feign/deposit",method = RequestMethod.POST
             , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Transaction depositTransaction(@RequestBody @Valid Transaction request)
+    public Transaction depositTransaction(
+            @RequestBody @Valid Transaction request)
     {
         return transactionService.deposit(request);
     }
