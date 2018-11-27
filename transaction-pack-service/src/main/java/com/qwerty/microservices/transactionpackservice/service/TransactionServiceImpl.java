@@ -66,28 +66,23 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionBetweenAccounts createTransactionBA(int accountNumberFrom,int accountNumberTo,
+    public TransactionBetweenAccounts invokeTransactionBA(int accountNumberFrom,int accountNumberTo,
                                        BigDecimal transactionAmount) {
         if (transactionBetweenAccDao.findFirstByAccountNumberFromOrderByTransactionNumberBADesc(accountNumberFrom) == null) {
-            TransactionBetweenAccounts transactionBetweenAccounts = new
+            return new
                     TransactionBetweenAccounts(accountNumberFrom,accountNumberTo,1 ,
                     transactionDao.findFirstByAccountNumberOrderByTransactionNumberDesc(accountNumberFrom).getAccountBalance(),
                     transactionDao.findFirstByAccountNumberOrderByTransactionNumberDesc(accountNumberTo).getAccountBalance()
                     ,"BetweenAccounts", transactionAmount);
-            transactionBetweenAccDao.save(transactionBetweenAccounts);
-            return transactionBetweenAccounts;
         } else {
             TransactionBetweenAccounts controlledTransactionBA =
                     transactionBetweenAccDao.findFirstByAccountNumberFromOrderByTransactionNumberBADesc(accountNumberFrom);
 
             int updatedTransactionNumber = controlledTransactionBA.getTransactionNumberBA() + 1;
 
-            TransactionBetweenAccounts transactionBetweenAccounts = new TransactionBetweenAccounts(accountNumberFrom,accountNumberTo
+            return new TransactionBetweenAccounts(accountNumberFrom,accountNumberTo
                     ,updatedTransactionNumber,controlledTransactionBA.getAccountBalanceFrom(),controlledTransactionBA.getAccountBalanceTo()
                     ,"BetweenAccounts", transactionAmount);
-            transactionBetweenAccDao.save(transactionBetweenAccounts);
-
-            return transactionBetweenAccounts;
         }
     }
 
@@ -121,12 +116,13 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionBetweenAccounts betweenAccounts(TransactionBetweenAccounts transactionBetweenAccounts) {
         Transaction transactionFrom = createTransaction(transactionBetweenAccounts.getAccountNumberFrom(),transactionBetweenAccounts.getAmount());
         Transaction transactionTo = createTransaction(transactionBetweenAccounts.getAccountNumberTo(),transactionBetweenAccounts.getAmount());
-        withDraw(transactionFrom);
-        deposit(transactionTo);
+        Transaction from = withDraw(transactionFrom);
+        Transaction to = deposit(transactionTo);
+        TransactionBetweenAccounts invokedBA = invokeTransactionBA(from.getAccountNumber(),to.getAccountNumber(),from.getAmount());
         TransactionBetweenAccounts transactionBA =
-                createTransactionBA(transactionBetweenAccounts.getAccountNumberFrom()
-                        ,transactionBetweenAccounts.getAccountNumberTo(),transactionBetweenAccounts.getAmount());
-        transactionBA.setDescription("BetweenAccounts");
+                new TransactionBetweenAccounts(invokedBA.getAccountNumberFrom(),invokedBA.getAccountNumberTo(),invokedBA.getTransactionNumberBA()
+                        ,from.getAccountBalance(),to.getAccountBalance()
+                        ,"BetweenAccounts",invokedBA.getAmount());
         transactionBetweenAccDao.save(transactionBA);
         return  transactionBA;
     }

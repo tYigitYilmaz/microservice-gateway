@@ -57,9 +57,9 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account transactionAccountUpdate(int accountNumber) {
        Account account = accountDao.findByAccountNumber(accountNumber);
-       Account responseConfig = transactionProxy.transactionConfirm(account);
-       account.setAccountBalance(responseConfig.getAccountBalance());
-       accountDao.save(account);
+        Account responseConfig = transactionProxy.transactionConfirm(account);
+        account.setAccountBalance(responseConfig.getAccountBalance());
+        accountDao.save(account);
        return account;
     }
 
@@ -72,8 +72,8 @@ public class AccountServiceImpl implements AccountService {
                     .add(responseConfig.getConversionMultiply()
                             .multiply(account.getConversionAmount())));
 
-        accountImp.setAccountBalance(accountImp.getAccountBalance().subtract(account.getConversionAmount()));
-        accountDao.save(accountImp);
+            accountImp.setAccountBalance(accountImp.getAccountBalance().subtract(account.getConversionAmount()));
+            accountDao.save(accountImp);
         return accountImp;
         }else if (to.equals("EUR")){
             accountImp.setAccountBalanceEur(accountImp.getAccountBalanceEur()
@@ -90,7 +90,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account createAccount(int accountNumber) {
         Account account = new Account(accountNumber,new BigDecimal(0),new BigDecimal(0),new BigDecimal(0));
-        accountDao.save(account);
+            accountDao.save(account);
         return null;
     }
 }

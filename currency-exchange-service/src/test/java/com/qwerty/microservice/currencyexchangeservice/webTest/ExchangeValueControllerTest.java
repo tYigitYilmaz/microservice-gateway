@@ -37,7 +37,7 @@ public class ExchangeValueControllerTest {
     private ExchangeValueDao exchangeValueDao;
 
     private static final String FROM = "RUB";
-    private static final String TO = "USD";
+    private static final String TO = "EUR";
     private static final BigDecimal CONVERSION_MULTIPLY = BigDecimal.valueOf(0);
 
     private Gson gson = new GsonBuilder().create();

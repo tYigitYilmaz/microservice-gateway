@@ -15,7 +15,7 @@ public interface TransactionService {
 
     Transaction withDraw(Transaction transaction);
 
-    TransactionBetweenAccounts createTransactionBA(int accountNumberFrom, int accountNumberTo,BigDecimal transactionAmount);
+    TransactionBetweenAccounts invokeTransactionBA(int accountNumberFrom, int accountNumberTo,BigDecimal transactionAmount);
 
     TransactionBetweenAccounts betweenAccounts(TransactionBetweenAccounts transactionBetweenAccounts);
 
