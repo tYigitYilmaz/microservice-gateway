@@ -54,9 +54,6 @@ public class TransactionControllerTest {
     @MockBean
     private AccountProxy accountProxy;
 
-    //https://spring.io/blog/2007/01/15/unit-testing-with-stubs-and-mocks/
-
-
 
     private Gson gson = new GsonBuilder().create();
 
