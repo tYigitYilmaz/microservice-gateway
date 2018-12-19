@@ -72,4 +72,16 @@ public class HomeController {
             return "redirect:/";
         }
     }
+    public static class RestMsg {
+        private String msg;
+        public RestMsg(String msg) {
+            this.msg = msg;
+        }
+        public String getMsg() {
+            return msg;
+        }
+        public void setMsg(String msg) {
+            this.msg = msg;
+        }
+    }
 }

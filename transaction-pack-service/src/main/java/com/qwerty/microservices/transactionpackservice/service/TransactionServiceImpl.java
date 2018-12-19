@@ -8,6 +8,7 @@ import com.qwerty.microservices.transactionpackservice.web.AccountProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 @Service
@@ -113,11 +114,13 @@ public class TransactionServiceImpl implements TransactionService {
 
 
     @Override
+    @Transactional
     public TransactionBetweenAccounts betweenAccounts(TransactionBetweenAccounts transactionBetweenAccounts) {
         Transaction transactionFrom = createTransaction(transactionBetweenAccounts.getAccountNumberFrom(),transactionBetweenAccounts.getAmount());
         Transaction transactionTo = createTransaction(transactionBetweenAccounts.getAccountNumberTo(),transactionBetweenAccounts.getAmount());
         Transaction from = withDraw(transactionFrom);
         Transaction to = deposit(transactionTo);
+
         TransactionBetweenAccounts invokedBA = invokeTransactionBA(from.getAccountNumber(),to.getAccountNumber(),from.getAmount());
         TransactionBetweenAccounts transactionBA =
                 new TransactionBetweenAccounts(invokedBA.getAccountNumberFrom(),invokedBA.getAccountNumberTo(),invokedBA.getTransactionNumberBA()

@@ -2,7 +2,10 @@ package com.qwerty.mircoservices.userservice.service;
 
 
 import com.qwerty.mircoservices.userservice.domain.User;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public interface UserService {
 
     User findByEmail(String email);
@@ -16,6 +19,10 @@ public interface UserService {
     boolean checkEmailExists(String email);
 
     void createUser(User user);
+
+    User registerUser(User user);
+
+    boolean removeAuthenticatedAccount();
 
 
 }
