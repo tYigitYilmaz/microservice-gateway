@@ -14,8 +14,12 @@ import java.util.Optional;
 @Service
 public class TokenBlackListService {
 
+    private TokenBlackListRepo tokenBlackListRepo;
+
     @Autowired
-    TokenBlackListRepo tokenBlackListRepo;
+    public void setTokenBlackListRepo(TokenBlackListRepo tokenBlackListRepo) {
+        this.tokenBlackListRepo = tokenBlackListRepo;
+    }
 
     public Boolean isBlackListed( String jti ) throws TokenNotFoundException {
         Optional<TokenBlackList> token = tokenBlackListRepo.findByJti(jti);

@@ -1,3 +1,4 @@
+/*
 package com.qwerty.mircoservices.userservice.controller;
 
 
@@ -85,3 +86,4 @@ public class HomeController {
         }
     }
 }
+*/

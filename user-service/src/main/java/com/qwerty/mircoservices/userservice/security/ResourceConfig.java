@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.*;
@@ -28,20 +29,25 @@ import java.io.IOException;
 
 @Configuration
 @EnableResourceServer
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true, proxyTargetClass = true)
 public class ResourceConfig extends ResourceServerConfigurerAdapter {
 
     @Value("${security.oauth2.resource.id}")
     private String resourceId;
+    private DefaultTokenServices tokenServices;
+    private TokenStore tokenStore;
 
     // The DefaultTokenServices bean provided at the AuthorizationConfig
     @Autowired
-    private DefaultTokenServices tokenServices;
+    public void setDefaultTokenServices(DefaultTokenServices tokenServices) {
+        this.tokenServices = tokenServices;
+    }
 
     // The TokenStore bean provided at the AuthorizationConfig
     @Autowired
-    private TokenStore tokenStore;
-
+    public void setTokenStore(TokenStore tokenStore) {
+        this.tokenStore = tokenStore;
+    }
 
     // To allow the rResourceServerConfigurerAdapter to understand the token,
     // it must share the same characteristics with AuthorizationServerConfigurerAdapter.
@@ -66,6 +72,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 // when restricting access to 'Roles' you must remove the "ROLE_" part role
                 // for "ROLE_USER" use only "USER"
+                .antMatchers("/").permitAll()
                 .antMatchers("/api/hello").access("hasAnyRole('USER')")
                 .antMatchers("/api/me").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/api/admin").hasRole("ADMIN")

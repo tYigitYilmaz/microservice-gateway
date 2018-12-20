@@ -3,7 +3,6 @@ package com.qwerty.mircoservices.userservice.domain;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name = "seq", initialValue = 1000000, allocationSize = 10000000)
 public class UserAccountNumber {
 
     @Id

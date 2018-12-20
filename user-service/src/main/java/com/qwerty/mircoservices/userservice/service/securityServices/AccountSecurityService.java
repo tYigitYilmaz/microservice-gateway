@@ -21,7 +21,7 @@ public class AccountSecurityService  implements UserDetailsService {
     private final Logger logger = Logger.getLogger(UserService.class);
 
     private UserDao userDao;
-
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public void setUserDao(UserDao userDao) {
@@ -29,7 +29,9 @@ public class AccountSecurityService  implements UserDetailsService {
     }
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {

@@ -32,16 +32,7 @@ public class UserServiceApplication {
         SpringApplication.run(UserServiceApplication.class, args);
     }
 
-    /*@Bean @Qualifier("mainDataSource")
-    public DataSource dataSource(){
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        EmbeddedDatabase db = builder
-                .setType(EmbeddedDatabaseType.HSQL)
-                .build();
-        return db;
-    }
-
-  */  @Bean
+    @Bean
     CommandLineRunner init(AccountSecurityService accountSecurity) {
         return (evt) -> Arrays.asList(
                 "user,admin,john,robert,ana".split(",")).forEach(
