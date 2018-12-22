@@ -41,7 +41,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/contract/**",
             "/error/**/*",
             "/console/**",
-            "/signup"
+            "/signup",
+            "/api/account/register",
+            "/index"
     };
 
     @Autowired

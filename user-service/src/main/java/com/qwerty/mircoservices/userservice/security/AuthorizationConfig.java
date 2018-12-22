@@ -4,7 +4,7 @@ package com.qwerty.mircoservices.userservice.security;
 import com.qwerty.mircoservices.userservice.domain.Role;
 import com.qwerty.mircoservices.userservice.domain.User;
 import com.qwerty.mircoservices.userservice.service.securityServices.TokenBlackListService;
-import com.qwerty.mircoservices.userservice.service.serviceImpl.UserServiceImpl;
+import com.qwerty.mircoservices.userservice.service.serviceImpl.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +25,6 @@ import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
-import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 import org.apache.log4j.Logger;
 
 
@@ -45,7 +44,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return new UserServiceImpl();
+        return new UserDetailService();
     }
 
 

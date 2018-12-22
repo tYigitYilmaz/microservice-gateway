@@ -16,8 +16,8 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column(name="userId",nullable = false,updatable = false)
     private Long id;
-    @Column(unique = true)
     private String username;
     @JsonIgnore
     private String password;

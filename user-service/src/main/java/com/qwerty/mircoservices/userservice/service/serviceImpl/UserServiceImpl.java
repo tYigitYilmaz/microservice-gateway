@@ -1,29 +1,22 @@
+/*
 package com.qwerty.mircoservices.userservice.service.serviceImpl;
 
-
-import com.qwerty.mircoservices.userservice.domain.Role;
 import com.qwerty.mircoservices.userservice.domain.User;
 import com.qwerty.mircoservices.userservice.domain.repository.UserDao;
 import com.qwerty.mircoservices.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.Optional;
-import org.apache.log4j.Logger;
 
+@Transactional
 @Service
-public class UserServiceImpl implements UserDetailsService {
+public class UserServiceImpl implements UserService {
 
-    private final Logger logger = Logger.getLogger(UserService.class);
-
+    private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
     private UserDao userDao;
-    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public void setUserDao(UserDao userDao) {
@@ -34,47 +27,63 @@ public class UserServiceImpl implements UserDetailsService {
         return userDao;
     }
 
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
+    @Override
+    public User findByEmail(String email) {
+        return userDao.findByEmail(email);
     }
-
-    public PasswordEncoder getPasswordEncoder() {
-        return passwordEncoder;
-    }
-
-
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        Optional<User> user=userDao.findByUsername(s);
-        if ( user.isPresent() ) {
-            return user.get();
-        } else {
-            throw new UsernameNotFoundException(String.format("Username[%s] not found", s));
-        }
+    public Optional<User> findByUsername(String username) {
+        return userDao.findByUsername(username);
     }
 
-    public User findAccountByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> user = userDao.findByUsername( username );
-        if ( user.isPresent() ) {
-            return user.get();
-        } else {
-            throw new UsernameNotFoundException(String.format("Username[%s] not found", username));
-        }
+    @Override
+    public boolean checkUserExists(String username, String email) {
+        return false;
     }
 
+    @Override
+    public boolean checkUsernameExists(String username) {
+        return false;
+    }
+
+    @Override
+    public boolean checkEmailExists(String email) {
+        return false;
+    }
+
+    @Override
+    public void createUser(User user) {
+        Optional<User> localUser = userDao.findByUsername(user.getUsername());
+        if (localUser != null){
+            LOG.info("User with username{} already exist.Nothing will be done.", user.getUsername());
+        }else {
+            String encryptedPassword = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encryptedPassword);
+
+            for (UserRole ur : userRoles){
+                roleDao.save(ur.getRole());
+            }
+
+            user.getUserRoles().addAll(userRoles);
+
+            user.setPrimaryAccount(accountService.createPrimaryAccount());
+            user.setSavingsAccount(accountService.createSavingsAccount());
+
+            localUser = userDao.save(user);
+        }
+        return localUser;
+    }
+    }
+
+    @Override
     public User registerUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.grantAuthority(Role.ROLE_USER);
-        return userDao.save( user );
+        return null;
     }
 
-    @Transactional // To successfully remove the date @Transactional annotation must be added
-    public boolean removeAuthenticatedUser() throws UsernameNotFoundException {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = findAccountByUsername(username);
-        int del = userDao.deleteAccountById(user.getId());
-        return del > 0;
+    @Override
+    public boolean removeAuthenticatedAccount() {
+        return false;
     }
 }
+*/

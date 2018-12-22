@@ -4,13 +4,15 @@ package com.qwerty.mircoservices.userservice.service;
 import com.qwerty.mircoservices.userservice.domain.User;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 
 @Component
 public interface UserService {
 
     User findByEmail(String email);
 
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
     boolean checkUserExists(String username, String email);
 
