@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,6 +27,14 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.apache.log4j.Logger;
+import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 
 
 @Configuration
@@ -34,6 +43,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
     private Logger logger = Logger.getLogger(AuthorizationConfig.class);
 
+    private SecretKeyProvider keyProvider;
     private int accessTokenValiditySeconds = 10000;
     private int refreshTokenValiditySeconds = 30000;
     private AuthenticationManager authenticationManager;
@@ -47,17 +57,29 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         return new UserDetailService();
     }
 
-
     @Autowired
     public void setAuthenticationManager(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
+    }
+    public AuthenticationManager getAuthenticationManager() {
+        return authenticationManager;
+    }
+
+    @Autowired
+    public void setSecretKeyProvider(SecretKeyProvider keyProvider) {
+        this.keyProvider = keyProvider;
+    }
+    public SecretKeyProvider getSecretKeyProvider() {
+        return keyProvider;
     }
 
     @Autowired
     public void setTokenBlackListService(TokenBlackListService blackListService) {
         this.blackListService = blackListService;
     }
-
+    public TokenBlackListService getTokenBlackListService() {
+        return blackListService;
+    }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
@@ -81,26 +103,37 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients
-                .inMemory()
-
-                .withClient("trusted-app")
-                .authorizedGrantTypes("client_credentials", "password", "refresh_token")
-                .authorities(Role.ROLE_TRUSTED_CLIENT.toString())
+        clients.inMemory()
+                .withClient("normal-app")
+                .authorizedGrantTypes("authorization_code", "implicit")
+                .authorities("ROLE_CLIENT")
                 .scopes("read", "write")
                 .resourceIds(resourceId)
-                .accessTokenValiditySeconds(10)
-                .refreshTokenValiditySeconds(30000)
+                .accessTokenValiditySeconds(accessTokenValiditySeconds)
+                .refreshTokenValiditySeconds(refreshTokenValiditySeconds)
+                .and()
+                .withClient("trusted-app")
+                .authorizedGrantTypes("client_credentials", "password", "refresh_token")
+                .authorities("ROLE_TRUSTED_CLIENT")
+                .scopes("read", "write")
+                .resourceIds(resourceId)
+                .accessTokenValiditySeconds(accessTokenValiditySeconds)
+                .refreshTokenValiditySeconds(refreshTokenValiditySeconds)
                 .secret("secret")
                 .and()
                 .withClient("register-app")
                 .authorizedGrantTypes("client_credentials")
-                .authorities(Role.ROLE_REGISTER.toString())
-                .scopes("registerUser")
-                .accessTokenValiditySeconds(10)
-                .refreshTokenValiditySeconds(10)
+                .authorities("ROLE_REGISTER")
+                .scopes("read")
                 .resourceIds(resourceId)
-                .secret("secret");
+                .secret("secret")
+                .and()
+                .withClient("my-client-with-registered-redirect")
+                .authorizedGrantTypes("authorization_code")
+                .authorities("ROLE_CLIENT")
+                .scopes("read", "trust")
+                .resourceIds("oauth2-resource")
+                .redirectUris("http://anywhere?key=value");
     }
 
     @Bean
@@ -108,16 +141,31 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         return new JwtTokenStore(accessTokenConverter());
     }
 
-    @Value("${security.signing-key}")
-    private String signingKey;
-
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setVerifierKey(signingKey);
-        converter.setSigningKey(signingKey);
+        try {
+            converter.setSigningKey(keyProvider.getKey());
+        } catch (URISyntaxException | KeyStoreException | NoSuchAlgorithmException | IOException | UnrecoverableKeyException | CertificateException e) {
+            e.printStackTrace();
+        }
+
         return converter;
     }
+
+
+
+   /* @Bean
+    public JwtAccessTokenConverter accessTokenConverter() {
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        try {
+            converter.setSigningKey(keyProvider.getKey());
+        } catch (URISyntaxException | KeyStoreException | NoSuchAlgorithmException | IOException | UnrecoverableKeyException | CertificateException e) {
+            e.printStackTrace();
+        }
+
+        return converter;
+    }*/
    /* @Bean
     @Qualifier("jwtAccessTokenConverter")
     protected JwtAccessTokenConverter jwtTokenEnhancer() throws Exception{

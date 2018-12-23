@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -24,8 +23,8 @@ public class AccountController {
     }
 
 
-    //@PreAuthorize("hasRole('REGISTER')")
-    @RequestMapping(value = "/api/account/register",method = RequestMethod.POST
+    @PreAuthorize("hasRole('REGISTER')")
+    @RequestMapping(value = "/api/register",method = RequestMethod.POST
             , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> registerAccount(@RequestBody User user) {
         user = userDetailService.registerUser(user);
@@ -47,12 +46,5 @@ public class AccountController {
                     HttpStatus.BAD_REQUEST
             );
         }
-    }
-    @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public String signup(Model model) {
-        User user = new User();
-
-        model.addAttribute("user", user);
-        return "signup";
     }
 }

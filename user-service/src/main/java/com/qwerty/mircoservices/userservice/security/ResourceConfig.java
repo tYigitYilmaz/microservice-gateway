@@ -1,31 +1,17 @@
 package com.qwerty.mircoservices.userservice.security;
-
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.*;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.web.util.matcher.RequestMatcher;
-import org.springframework.web.filter.GenericFilterBean;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 @Configuration
 @EnableResourceServer
@@ -34,6 +20,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
 
     @Value("${security.oauth2.resource.id}")
     private String resourceId;
+
     private DefaultTokenServices tokenServices;
     private TokenStore tokenStore;
 
@@ -42,11 +29,17 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     public void setDefaultTokenServices(DefaultTokenServices tokenServices) {
         this.tokenServices = tokenServices;
     }
+    public DefaultTokenServices getDefaultTokenServices() {
+        return tokenServices;
+    }
 
     // The TokenStore bean provided at the AuthorizationConfig
     @Autowired
     public void setTokenStore(TokenStore tokenStore) {
         this.tokenStore = tokenStore;
+    }
+    public TokenStore getTokenStore() {
+        return tokenStore;
     }
 
     // To allow the rResourceServerConfigurerAdapter to understand the token,

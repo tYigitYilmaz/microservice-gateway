@@ -13,12 +13,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.core.env.Environment;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import java.security.SecureRandom;
 
 @Configuration
 @EnableWebSecurity( debug = true )
@@ -28,6 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private UserDetailsService userDetailsService;
     private PasswordEncoder passwordEncoder;
+    private Environment env;
+    private AccountSecurityService accountSecurityService;
 
     //private static final String SALT = "salt"; // Salt should be protected
     private static final String[] PUBLIC_MATCHERS = {
@@ -36,14 +36,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/js/**",
             "/images/**",
             "/",
-            "/api/hello",
             "/about/**",
             "/contract/**",
             "/error/**/*",
             "/console/**",
-            "/signup",
-            "/api/account/register",
-            "/index"
+            "/api/account/register"
     };
 
     @Autowired
@@ -56,8 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.userDetailsService = userDetailsService;
     }
 
-    private Environment env;
-    private AccountSecurityService accountSecurityService;
+
 
     public SecurityConfig (Environment env, AccountSecurityService accountSecurityService){
         this.env = env;
@@ -70,9 +66,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
     }
 */
-
-
-
 
     /*@Override
     public void configure(WebSecurity web) throws Exception {

@@ -21,6 +21,11 @@ public class TokenBlackListService {
         this.tokenBlackListRepo = tokenBlackListRepo;
     }
 
+    public TokenBlackListRepo getTokenBlackListRepo() {
+        return tokenBlackListRepo;
+    }
+
+
     public Boolean isBlackListed( String jti ) throws TokenNotFoundException {
         Optional<TokenBlackList> token = tokenBlackListRepo.findByJti(jti);
         if ( token.isPresent() ) {

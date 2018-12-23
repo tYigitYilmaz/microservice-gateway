@@ -35,7 +35,7 @@ public class UserServiceApplication {
     @Bean
     CommandLineRunner init(AccountSecurityService accountSecurity) {
         return (evt) -> Arrays.asList(
-                "user,admin,john,robert,ana".split(",")).forEach(
+                "user,admin,commonUser1,commonUser2,commonUser3".split(",")).forEach(
                 username -> {
                     User user = new User();
                     user.setUsername(username);
