@@ -19,7 +19,7 @@
     To get a new token 
     curl trusted-app:secret@localhost:8000/oauth/token -d "grant_type=password&username=user&password=password" | jq 
     To get a refresh token
-    curl trusted-app:secret@localhost:8000/oauth/token -d "grant_type=access_token&access_tokem=[ACCESS_TOKEN]" | jq 
+    curl trusted-app:secret@localhost:8000/oauth/token -d "grant_type=access_token&access_token=[ACCESS_TOKEN]" | jq 
     To access a protected resource
     curl -H "Authorization: Bearer [ACCESS_TOKEN]" localhost:8000/api/hello
     Register new User

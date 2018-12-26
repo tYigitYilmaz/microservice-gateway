@@ -30,7 +30,6 @@ public class UserServiceApplication {
     }
 
     @Bean
-    @Order(1)
     CommandLineRunner init(UserDetailService userDetailService) {
         return (evt) -> Arrays.asList(
                 "user,admin,user1,user2,user3".split(",")).forEach(

@@ -144,12 +144,11 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        try {
-            converter.setSigningKey(keyProvider.getKey());
-        } catch (URISyntaxException | KeyStoreException | NoSuchAlgorithmException | IOException | UnrecoverableKeyException | CertificateException e) {
-            e.printStackTrace();
-        }
-
+        KeyStoreKeyFactory keyStoreKeyFactory =
+                new KeyStoreKeyFactory(
+                        new ClassPathResource("mykeys.jks"),
+                        "mypass".toCharArray());
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("mykeys"));
         return converter;
     }
 

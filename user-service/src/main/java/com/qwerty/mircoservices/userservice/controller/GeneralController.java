@@ -9,12 +9,12 @@ import java.security.Principal;
 @RestController
 public class GeneralController {
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public RestMsg index() {
-        return new RestMsg("index");
+    @GetMapping("/")
+    public RestMsg hello(){
+        return new RestMsg("Hello World!");
     }
 
-    @RequestMapping(value ="/api/test", method = RequestMethod.GET)
+    @GetMapping("/api/test")
     public RestMsg apitest(){
         return new RestMsg("Hello apiTest!");
     }
