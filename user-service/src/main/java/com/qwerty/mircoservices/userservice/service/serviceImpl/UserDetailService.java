@@ -17,12 +17,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 import org.apache.log4j.Logger;
 
+import javax.security.auth.login.AccountException;
+
 @Service
 public class UserDetailService implements UserDetailsService {
 
     private final Logger logger = Logger.getLogger(UserService.class);
 
     private UserDao userDao;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -34,14 +38,14 @@ public class UserDetailService implements UserDetailsService {
         return userDao;
     }
 
-    @Autowired
+  /*  @Autowired
     public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }
 
     public PasswordEncoder getPasswordEncoder() {
         return passwordEncoder;
-    }
+    }*/
 
 
 
@@ -64,11 +68,14 @@ public class UserDetailService implements UserDetailsService {
         }
     }
 
-    public User registerUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.grantAuthority(Role.ROLE_USER);
-        return userDao.save(user);
-    }
+    public User register(User user) throws AccountException {
+        if ( userDao.countByUsername( user.getUsername() ) == 0 ) {
+           user.setPassword(passwordEncoder.encode(user.getPassword()));
+            return userDao.save( user );
+        } else {
+          throw new AccountException(String.format("Username[%s] already taken.", user.getUsername()));
+        }
+   }
 
     @Transactional // To successfully remove the date @Transactional annotation must be added
     public boolean removeAuthenticatedUser() throws UsernameNotFoundException {

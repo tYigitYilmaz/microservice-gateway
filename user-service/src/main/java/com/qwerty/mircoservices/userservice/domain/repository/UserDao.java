@@ -15,5 +15,5 @@ public interface UserDao extends CrudRepository<User, Long> {
     Optional<User> findByUsername(String username);
     User findByEmail(String email);
     int deleteAccountById(Long id);
-
+    Integer countByUsername(String username);
 }

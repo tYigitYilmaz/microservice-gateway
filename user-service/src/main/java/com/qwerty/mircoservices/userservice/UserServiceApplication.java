@@ -13,6 +13,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.security.auth.login.AccountException;
 import java.util.Arrays;
 
 @SpringBootApplication
@@ -32,17 +33,24 @@ public class UserServiceApplication {
     @Bean
     CommandLineRunner init(UserDetailService userDetailService) {
         return (evt) -> Arrays.asList(
+
                 "user,admin,user1,user2,user3".split(",")).forEach(
+
                 username -> {
                     User user = new User();
                     user.setUsername(username);
-                    user.setPassword("password");
+                    if ( username.equals("user")) user.setPassword("password");
+                    else user.setPassword(passwordEncoder().encode("password"));
                     user.setFirstName(username);
                     user.setLastName("LastName");
-                    user.grantAuthority(Role.ROLE_USER);
-                    if (username.equals("admin"))
-                        user.grantAuthority(Role.ROLE_ADMIN);
-                    userDetailService.registerUser(user);
+                    user.grantAuthority("ROLE_USER");
+                    if ( username.equals("admin") )
+                        user.grantAuthority("ROLE_ADMIN");
+                    try {
+                        userDetailService.register(user);
+                    } catch (AccountException e) {
+                        e.printStackTrace();
+                    }
                 }
         );
     }

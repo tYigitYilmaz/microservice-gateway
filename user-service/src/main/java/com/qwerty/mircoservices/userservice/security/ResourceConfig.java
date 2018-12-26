@@ -21,70 +21,39 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Value("${security.oauth2.resource.id}")
     private String resourceId;
 
+    @Autowired
     private DefaultTokenServices tokenServices;
+
+    @Autowired
     private TokenStore tokenStore;
 
-    // The DefaultTokenServices bean provided at the AuthorizationConfig
-    @Autowired
-    public void setDefaultTokenServices(DefaultTokenServices tokenServices) {
-        this.tokenServices = tokenServices;
-    }
-    public DefaultTokenServices getDefaultTokenServices() {
-        return tokenServices;
-    }
 
-    // The TokenStore bean provided at the AuthorizationConfig
-    @Autowired
-    public void setTokenStore(TokenStore tokenStore) {
-        this.tokenStore = tokenStore;
-    }
-    public TokenStore getTokenStore() {
-        return tokenStore;
-    }
-
-    // To allow the rResourceServerConfigurerAdapter to understand the token,
-    // it must share the same characteristics with AuthorizationServerConfigurerAdapter.
-    // So, we must wire it up the beans in the ResourceServerSecurityConfigurer.
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources
                 .resourceId(resourceId)
                 .tokenServices(tokenServices)
                 .tokenStore(tokenStore);
-
     }
 
-    @Override
+   @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
-
-                .requestMatcher(new OAuthRequestedMatcher())
-                .csrf().disable()
+        http.requestMatcher(new OAuthRequestedMatcher())
                 .anonymous().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                // when restricting access to 'Roles' you must remove the "ROLE_" part role
-                // for "ROLE_USER" use only "USER"
-                .antMatchers("/").permitAll()
                 .antMatchers("/api/hello").access("hasAnyRole('USER')")
                 .antMatchers("/api/me").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/api/admin").hasRole("ADMIN")
-                // use the full name when specifying authority access
-                .antMatchers("/api/registerUser").hasAuthority("ROLE_REGISTER")
-                // restricting all access to /api/** to authenticated users
-                .antMatchers("/api/**").authenticated();
+                .antMatchers("/api/register").hasAuthority("ROLE_REGISTER");
     }
 
-    private static class OAuthRequestedMatcher implements RequestMatcher {
-        public boolean matches(HttpServletRequest request) {
-            // Determine if the resource called is "/api/**"
-            String path = request.getServletPath();
-            if ( path.length() >= 5 ) {
-                path = path.substring(0, 5);
-                boolean isApi = path.equals("/api/");
-                return isApi;
-            } else return false;
+   private static class OAuthRequestedMatcher implements RequestMatcher {
+       public boolean matches(HttpServletRequest request) {
+            String auth = request.getHeader("Authorization");
+            // Determine if the client request contained an OAuth Authorization
+            boolean haveOauth2Token = (auth != null) && auth.startsWith("Bearer");
+            boolean haveAccessToken = request.getParameter("access_token")!=null;
+            return haveOauth2Token || haveAccessToken;
         }
     }
-
 }

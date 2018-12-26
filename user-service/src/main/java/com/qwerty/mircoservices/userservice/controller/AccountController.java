@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.login.AccountException;
 import java.security.Principal;
 
 @RestController
@@ -26,8 +27,8 @@ public class AccountController {
     @PreAuthorize("hasRole('REGISTER')")
     @RequestMapping(value = "/api/register",method = RequestMethod.POST
             , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<User> registerAccount(@RequestBody User user) {
-        user = userDetailService.registerUser(user);
+    public ResponseEntity<User> registerAccount(@RequestBody User user) throws AccountException {
+        user = userDetailService.register(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
