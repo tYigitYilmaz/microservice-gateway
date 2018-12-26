@@ -2,20 +2,16 @@ package com.qwerty.mircoservices.userservice;
 
 import com.qwerty.mircoservices.userservice.domain.Role;
 import com.qwerty.mircoservices.userservice.domain.User;
-import com.qwerty.mircoservices.userservice.service.securityServices.AccountSecurityService;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.qwerty.mircoservices.userservice.service.serviceImpl.UserDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.sql.DataSource;
 import java.util.Arrays;
 
 @SpringBootApplication
@@ -33,9 +29,9 @@ public class UserServiceApplication {
     }
 
     @Bean
-    CommandLineRunner init(AccountSecurityService accountSecurity) {
+    CommandLineRunner init(UserDetailService userDetailService) {
         return (evt) -> Arrays.asList(
-                "user,admin,commonUser1,commonUser2,commonUser3".split(",")).forEach(
+                "user,admin,user1,user2,user3".split(",")).forEach(
                 username -> {
                     User user = new User();
                     user.setUsername(username);
@@ -45,7 +41,7 @@ public class UserServiceApplication {
                     user.grantAuthority(Role.ROLE_USER);
                     if (username.equals("admin"))
                         user.grantAuthority(Role.ROLE_ADMIN);
-                    accountSecurity.registerUser(user);
+                    userDetailService.registerUser(user);
                 }
         );
     }

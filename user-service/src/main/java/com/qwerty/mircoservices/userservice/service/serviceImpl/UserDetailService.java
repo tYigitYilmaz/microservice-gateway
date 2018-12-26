@@ -55,7 +55,7 @@ public class UserDetailService implements UserDetailsService {
         }
     }
 
-    public User findAccountByUsername(String username) throws UsernameNotFoundException {
+    public User findUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userDao.findByUsername( username );
         if ( user.isPresent() ) {
             return user.get();
@@ -67,13 +67,13 @@ public class UserDetailService implements UserDetailsService {
     public User registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.grantAuthority(Role.ROLE_USER);
-        return userDao.save( user );
+        return userDao.save(user);
     }
 
     @Transactional // To successfully remove the date @Transactional annotation must be added
     public boolean removeAuthenticatedUser() throws UsernameNotFoundException {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = findAccountByUsername(username);
+        User user = findUserByUsername(username);
         int del = userDao.deleteAccountById(user.getId());
         return del > 0;
     }

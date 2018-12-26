@@ -1,16 +1,14 @@
 package com.qwerty.mircoservices.userservice.security;
 
 
-import com.qwerty.mircoservices.userservice.domain.Role;
 import com.qwerty.mircoservices.userservice.domain.User;
-import com.qwerty.mircoservices.userservice.service.securityServices.TokenBlackListService;
+import com.qwerty.mircoservices.userservice.service.serviceImpl.TokenBlackListService;
 import com.qwerty.mircoservices.userservice.service.serviceImpl.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -27,7 +25,6 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.apache.log4j.Logger;
-import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -163,19 +160,16 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         } catch (URISyntaxException | KeyStoreException | NoSuchAlgorithmException | IOException | UnrecoverableKeyException | CertificateException e) {
             e.printStackTrace();
         }
-
         return converter;
     }*/
    /* @Bean
     @Qualifier("jwtAccessTokenConverter")
     protected JwtAccessTokenConverter jwtTokenEnhancer() throws Exception{
-
         JwtAccessTokenConverter converter =  new JwtAccessTokenConverter();
         Resource resource = new ClassPathResource("mypublic.pem");
         String publicKey = null;
         try {
             publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -183,15 +177,14 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         return converter;
     }*/
 
-  /*  @Bean
-    public AuthorizationServerTokenServices tokenServices() {
-        final DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
-        defaultTokenServices.setAccessTokenValiditySeconds(-1);
-
-        defaultTokenServices.setTokenStore(tokenStore());
-        return defaultTokenServices;
-    }
-*/
+    /*  @Bean
+      public AuthorizationServerTokenServices tokenServices() {
+          final DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
+          defaultTokenServices.setAccessTokenValiditySeconds(-1);
+          defaultTokenServices.setTokenStore(tokenStore());
+          return defaultTokenServices;
+      }
+  */
     @Bean
     @Primary
     public DefaultTokenServices tokenServices() {

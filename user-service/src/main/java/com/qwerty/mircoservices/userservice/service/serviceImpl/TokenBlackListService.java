@@ -1,4 +1,4 @@
-package com.qwerty.mircoservices.userservice.service.securityServices;
+package com.qwerty.mircoservices.userservice.service.serviceImpl;
 
 
 import com.qwerty.mircoservices.userservice.domain.TokenBlackList;

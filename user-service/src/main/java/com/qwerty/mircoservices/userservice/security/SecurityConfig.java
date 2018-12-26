@@ -1,6 +1,5 @@
 package com.qwerty.mircoservices.userservice.security;
 
-import com.qwerty.mircoservices.userservice.service.securityServices.AccountSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +26,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     private PasswordEncoder passwordEncoder;
     private Environment env;
-    private AccountSecurityService accountSecurityService;
 
     //private static final String SALT = "salt"; // Salt should be protected
     private static final String[] PUBLIC_MATCHERS = {
@@ -55,9 +53,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-    public SecurityConfig (Environment env, AccountSecurityService accountSecurityService){
+    public SecurityConfig (Environment env, UserDetailsService userDetailsService){
         this.env = env;
-        this.accountSecurityService = accountSecurityService;
+        this.userDetailsService = userDetailsService;
     }
 
 /*

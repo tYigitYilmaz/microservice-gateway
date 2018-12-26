@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface TokenBlackListRepo extends CrudRepository<TokenBlackList, Long> {
+public interface TokenBlackListRepo extends Repository<TokenBlackList, Long> {
     Optional<TokenBlackList> findByJti(String jti);
     List<TokenBlackList> queryAllByUserIdAndIsBlackListedTrue(Long userId);
     List<TokenBlackList> deleteAllByUserIdAndExpiresBefore (Long userId, Long date);
-    /*save(TokenBlackList tokenBlackList);
-    List<TokenBlackList> deleteAllByUserIdAndExpiresBefore(Long userId, Long date);*/
+    void save(TokenBlackList tokenBlackList);
+
         }
