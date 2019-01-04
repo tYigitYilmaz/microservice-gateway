@@ -75,8 +75,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         oauthServer
                 .tokenKeyAccess("isAnonymous() || hasAuthority('ROLE_TRUSTED_CLIENT')")
                 .checkTokenAccess("hasAuthority('ROLE_TRUSTED_CLIENT')");
-
     }
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()

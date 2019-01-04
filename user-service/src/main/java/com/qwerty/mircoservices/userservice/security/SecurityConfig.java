@@ -47,6 +47,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private static final String[] PUBLIC_MATCHERS = {
+            "/webjars/**",
+            "/css/**",
+            "/js/**",
+            "/images/**",
+            "/about/**",
+            "/contract/**",
+            "/error/**/*",
+            "/console/**",
+            "/oauth/**"
+
+    };
+
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -67,8 +80,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .anyRequest().authenticated()
-                .antMatchers("/","/**").permitAll()
+                .antMatchers(PUBLIC_MATCHERS).permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers(HttpMethod.OPTIONS, "/oauth/token").permitAll()
                 .and().httpBasic().and()
                 .csrf().disable();
     }

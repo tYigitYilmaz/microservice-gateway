@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/netflix-zuul-gateway/netflix-zuul-gateway.iml" filepath="$PROJECT_DIR$/netflix-zuul-gateway/netflix-zuul-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/transaction-pack-service/transaction-pack-service.iml" filepath="$PROJECT_DIR$/transaction-pack-service/transaction-pack-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service-front/user-service-front.iml" filepath="$PROJECT_DIR$/user-service-front/user-service-front.iml" />
     </modules>
   </component>
 </project>

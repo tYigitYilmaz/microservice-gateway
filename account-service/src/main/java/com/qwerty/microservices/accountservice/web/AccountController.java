@@ -75,4 +75,11 @@ public class AccountController {
             @RequestBody @Valid Account request) {
         return accountService.createAccount(request.getAccountNumber());
     }
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Account userAccount(
+            @RequestBody @Valid Account request) {
+        return accountService.createAccount(request.getAccountNumber());
+    }
 }

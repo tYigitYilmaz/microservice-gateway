@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/account-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/currency-exchange-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/netflix-eureka-naming-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/netflix-zuul-gateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/transaction-pack-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/transaction-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/transactionpack-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/transactionrev-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-front-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-front" charset="UTF-8" />
   </component>
 </project>

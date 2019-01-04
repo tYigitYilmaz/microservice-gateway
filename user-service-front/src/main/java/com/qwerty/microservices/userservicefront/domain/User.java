@@ -1,7 +1,5 @@
-package com.qwerty.mircoservices.userservice.domain;
+package com.qwerty.microservices.userservicefront.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,13 +13,22 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long id;
     private String username;
     private String password;
     private String firstName;
     private String lastName;
     private String email;
+    private int accountNumber;
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles;
@@ -29,10 +36,15 @@ public class User implements UserDetails {
     private boolean accountNonExpired, accountNonLocked, credentialsNonExpired, enabled;
 
     public User() {
-        this.accountNonExpired = true;
-        this.accountNonLocked = true;
-        this.credentialsNonExpired = true;
-        this.enabled = true;
+    }
+
+    public User(String username, String password, String firstName, String lastName, String email, int accountNumber) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.accountNumber = accountNumber;
     }
 
     @Override
@@ -78,7 +90,7 @@ public class User implements UserDetails {
 
 
     public String getPassword() {
-       return password;
+        return password;
     }
 
 
