@@ -51,6 +51,7 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/contract/**",
             "/error/**/*",
             "/console/**",
+            "/",
             "/register/**"
 
     };
@@ -69,11 +70,15 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-            .csrf().disable()
-            .exceptionHandling().authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint).and()
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-            .authorizeRequests()
-            .anyRequest().authenticated().antMatchers(PUBLIC_MATCHERS).permitAll();
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .antMatchers(PUBLIC_MATCHERS).permitAll()
+                .and()
+                .csrf().disable()
+                .exceptionHandling().authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .authorizeRequests()
+                .anyRequest().authenticated();
 
        httpSecurity
             .addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
@@ -98,8 +103,11 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .ignoring()
             .antMatchers(
                 HttpMethod.GET,
-                "/" //Other Stuff You want to Ignore
-            )
+                    PUBLIC_MATCHERS //Other Stuff You want to Ignore
+            ).antMatchers(
+                HttpMethod.POST,
+                PUBLIC_MATCHERS //Other Stuff You want to Ignore
+        )
             .and()
             .ignoring()
             .antMatchers("/h2-console/**/**");//Should not be in Production!

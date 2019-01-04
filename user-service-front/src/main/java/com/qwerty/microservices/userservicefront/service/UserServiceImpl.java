@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -24,7 +26,8 @@ public class UserServiceImpl implements UserService {
         User checkedUser = userDao.findByUsername(user.getUsername());
         if (checkedUser==null){
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            user.setAccountNumber((int) Math.random());
+            int generatedInteger = new Random().nextInt();
+            user.setAccountNumber( generatedInteger);
             userDao.save(user);
             return true;
         }return false;
