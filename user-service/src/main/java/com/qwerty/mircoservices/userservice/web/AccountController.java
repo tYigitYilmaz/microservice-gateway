@@ -1,4 +1,4 @@
-package com.qwerty.mircoservices.userservice.controller;
+package com.qwerty.mircoservices.userservice.web;
 
 
 import com.qwerty.mircoservices.userservice.domain.User;

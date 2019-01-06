@@ -40,7 +40,7 @@ public class UserServiceApplication {
                     User user = new User();
                     user.setUsername(username);
                     if ( username.equals("user")) user.setPassword("password");
-                    else user.setPassword(passwordEncoder().encode("password"));
+                    else user.setPassword("password");
                     user.setFirstName(username);
                     user.setLastName("LastName");
                     user.grantAuthority("ROLE_USER");

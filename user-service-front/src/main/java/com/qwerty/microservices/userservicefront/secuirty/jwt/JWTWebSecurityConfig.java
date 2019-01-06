@@ -1,4 +1,4 @@
-package com.qwerty.microservices.userservicefront.security.jwt;
+package com.qwerty.microservices.userservicefront.secuirty.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,20 +42,6 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .passwordEncoder(passwordEncoderBean());
     }
 
-    private static final String[] PUBLIC_MATCHERS = {
-            "/webjars/**",
-            "/css/**",
-            "/js/**",
-            "/images/**",
-            "/about/**",
-            "/contract/**",
-            "/error/**/*",
-            "/console/**",
-            "/",
-            "/register/**"
-
-    };
-
     @Bean
     public PasswordEncoder passwordEncoderBean() {
         return new BCryptPasswordEncoder();
@@ -70,17 +56,25 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeRequests()
-                .anyRequest().authenticated()
-                .antMatchers(PUBLIC_MATCHERS).permitAll()
+             .authorizeRequests()
+             .anyRequest().authenticated()
+             .antMatchers("/register").permitAll()
                 .and()
-                .csrf().disable()
-                .exceptionHandling().authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint).and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests()
-                .anyRequest().authenticated();
+                .anonymous()
+                .and()
+            .csrf().disable()
+            .exceptionHandling().authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint).and()
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+            .authorizeRequests()
+            .anyRequest().authenticated();
 
        httpSecurity
+               .authorizeRequests()
+               .anyRequest().authenticated()
+               .antMatchers("/register").permitAll()
+               .and()
+               .anonymous()
+               .and()
             .addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
         httpSecurity
@@ -91,7 +85,6 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-
         webSecurity
             .ignoring()
             .antMatchers(
@@ -103,11 +96,8 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .ignoring()
             .antMatchers(
                 HttpMethod.GET,
-                    PUBLIC_MATCHERS //Other Stuff You want to Ignore
-            ).antMatchers(
-                HttpMethod.POST,
-                PUBLIC_MATCHERS //Other Stuff You want to Ignore
-        )
+                "/" //Other Stuff You want to Ignore
+            )
             .and()
             .ignoring()
             .antMatchers("/h2-console/**/**");//Should not be in Production!

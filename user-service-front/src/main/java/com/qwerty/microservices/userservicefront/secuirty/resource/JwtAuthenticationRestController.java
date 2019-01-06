@@ -1,7 +1,8 @@
-package com.qwerty.microservices.userservicefront.security.resource;
+package com.qwerty.microservices.userservicefront.secuirty.resource;
 
-import com.qwerty.microservices.userservicefront.security.jwt.JwtTokenUtil;
-import com.qwerty.microservices.userservicefront.security.jwt.JwtUserDetails;
+
+import com.qwerty.microservices.userservicefront.secuirty.jwt.JwtTokenUtil;
+import com.qwerty.microservices.userservicefront.secuirty.jwt.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;

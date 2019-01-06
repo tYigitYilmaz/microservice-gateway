@@ -1,4 +1,4 @@
-package com.qwerty.microservices.userservicefront.security.jwt;
+package com.qwerty.microservices.userservicefront.secuirty.jwt;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;

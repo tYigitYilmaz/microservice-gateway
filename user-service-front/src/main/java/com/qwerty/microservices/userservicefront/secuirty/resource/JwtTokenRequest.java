@@ -1,4 +1,4 @@
-package com.qwerty.microservices.userservicefront.security.resource;
+package com.qwerty.microservices.userservicefront.secuirty.resource;
 
 import java.io.Serializable;
 

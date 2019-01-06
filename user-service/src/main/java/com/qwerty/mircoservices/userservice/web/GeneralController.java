@@ -1,4 +1,4 @@
-package com.qwerty.mircoservices.userservice.controller;
+package com.qwerty.mircoservices.userservice.web;
 
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -27,13 +27,13 @@ public class GeneralController {
     }
 
     @GetMapping("/api/admin")
-    // If a controller request asks for the Principal user in
+    // If a web request asks for the Principal user in
     // the method declaration Spring security will provide it.
     public RestMsg helloAdmin(Principal principal){
         return new RestMsg(String.format("Welcome '%s'!", principal.getName()));
     }
 
-    // A helper class to make our controller output look nice
+    // A helper class to make our web output look nice
     public static class RestMsg {
         private String msg;
         public RestMsg(String msg) {

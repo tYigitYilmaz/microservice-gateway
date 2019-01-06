@@ -18,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity( debug = true )
-@Order(SecurityProperties.DEFAULT_FILTER_ORDER)
+@Order(SecurityProperties.BASIC_AUTH_ORDER)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
@@ -58,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/console/**",
             "/oauth/**"
 
+
     };
 
     @Bean
@@ -78,6 +79,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
+                .cors().disable()
+                .anonymous().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .antMatchers(PUBLIC_MATCHERS).permitAll()

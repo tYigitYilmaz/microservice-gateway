@@ -1,4 +1,4 @@
-package com.qwerty.microservices.userservicefront.security.jwt;
+package com.qwerty.microservices.userservicefront.secuirty.jwt;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

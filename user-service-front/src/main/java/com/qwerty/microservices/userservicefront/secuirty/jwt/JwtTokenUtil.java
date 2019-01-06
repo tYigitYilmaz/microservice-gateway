@@ -1,4 +1,4 @@
-package com.qwerty.microservices.userservicefront.security.jwt;
+package com.qwerty.microservices.userservicefront.secuirty.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Clock;
