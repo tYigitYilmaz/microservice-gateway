@@ -14,6 +14,8 @@ import javax.security.auth.login.AccountException;
 import java.security.Principal;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class AccountController {
 
     private UserDetailService userDetailService;
@@ -24,7 +26,7 @@ public class AccountController {
     }
 
 
-    @PreAuthorize("hasRole('REGISTER')")
+
     @RequestMapping(value = "/api/register",method = RequestMethod.POST
             , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> registerAccount(@RequestBody User user) throws AccountException {

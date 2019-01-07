@@ -73,10 +73,10 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     }
 
 
-
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
         oauthServer
+
                 .tokenKeyAccess("isAnonymous() || hasAuthority('ROLE_TRUSTED_CLIENT')")
                 .checkTokenAccess("hasAuthority('ROLE_TRUSTED_CLIENT')");
     }

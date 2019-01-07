@@ -2,25 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0a42e20-55ab-45b4-b5d1-bf35bdfa6b00" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/netflix-zuul-gateway/.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/JsonToUrlEncodedAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/MyServletRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/jwt/JWTWebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JWTWebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/jwt/JwtInMemoryUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtInMemoryUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/jwt/JwtTokenAuthorizationOncePerRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtTokenAuthorizationOncePerRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/jwt/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/jwt/JwtUnAuthorizedResponseAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUnAuthorizedResponseAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/jwt/JwtUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/resource/AuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/AuthenticationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/resource/JwtAuthenticationRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtAuthenticationRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/resource/JwtTokenRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtTokenRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/resource/JwtTokenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtTokenResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/GeneralController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix-zuul-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/netflix-zuul-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,20 +49,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="100" column="5" selection-start-line="100" selection-start-column="3" selection-end-line="116" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1092">
+            <state relative-caret-position="24">
               <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/UserServiceApplication.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="44" column="49" lean-forward="true" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+            <state relative-caret-position="71">
+              <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JWTWebSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -84,6 +106,7 @@
       <find>password</find>
       <find>oauth</find>
       <find>user</find>
+      <find>head</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\tyigi\Desktop\Java Project\bank-application\netflix-eureka-naming-server</dir>
@@ -95,21 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/user-front-service/src/main/java/com/qwerty/mircoservices/userfrontservice/web/UserController.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java" />
-        <option value="$PROJECT_DIR$/user-front-service/src/main/java/com/qwerty/mircoservices/userfrontservice/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/user-front-service/src/main/java/com/qwerty/mircoservices/userfrontservice/domain/User.java" />
-        <option value="$PROJECT_DIR$/user-front-service/src/main/java/com/qwerty/mircoservices/userfrontservice/security/jwt/JWTWebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/user-front-service/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/user-front-service/src/main/java/com/qwerty/mircoservices/userfrontservice/UserFrontServiceApplication.java" />
-        <option value="$PROJECT_DIR$/user-front-service/src/main/java/com/qwerty/mircoservices/userfrontservice/web/AccountProxy.java" />
-        <option value="$PROJECT_DIR$/user-front-service/pom.xml" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/UserServiceFrontApplication.java" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/AccountProxy.java" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/security/resource/JwtAuthenticationRestController.java" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserService.java" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/domain/repository/UserDao.java" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/UserController.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/domain/User.java" />
         <option value="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionServiceImpl.java" />
         <option value="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/service/TransactionService.java" />
@@ -118,8 +126,6 @@
         <option value="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/repository/TransactionDao.java" />
         <option value="$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/domain/repository/TransactionBetweenAccDao.java" />
         <option value="$PROJECT_DIR$/account-service/src/test/java/com/qwerty/microservices/accountservice/webTest/AccountControllerTest.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" />
         <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/repository/AccountDao.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/resources/application.properties" />
@@ -133,7 +139,6 @@
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/AuthorizationServerConfig.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/HomeController.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/WebConfig.java" />
-        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/user-service-front/pom.xml" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/resource/JwtTokenRequest.java" />
@@ -142,10 +147,28 @@
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUnAuthorizedResponseAuthenticationEntryPoint.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtAuthenticationRestController.java" />
         <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JWTWebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java" />
-        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java" />
         <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/UserServiceApplication.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountProxy.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/netflix-zuul-gateway/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/user-service/.yml" />
+        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserService.java" />
+        <option value="$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/UserController.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/GeneralController.java" />
+        <option value="$PROJECT_DIR$/netflix-zuul-gateway/.yml" />
+        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java" />
+        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/MyServletRequestWrapper.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/JsonToUrlEncodedAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountController.java" />
+        <option value="$PROJECT_DIR$/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/domain/User.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java" />
+        <option value="$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -165,11 +188,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="10" />
+    <option name="width" value="1918" />
+    <option name="height" value="1029" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -280,6 +302,16 @@
               <item name="bank-application" type="462c0819:PsiDirectoryNode" />
               <item name="account-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="accountservice" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="account-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -308,6 +340,40 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="accountservice" type="462c0819:PsiDirectoryNode" />
               <item name="webTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="netflix-zuul-gateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="netflix-zuul-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="netflix-zuul-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="netflix-zuul-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="netflix-zuul-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
@@ -378,6 +444,16 @@
             <path>
               <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
               <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="transaction-pack-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="transactionpackservice" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
               <item name="user-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,6 +505,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="userservice" type="462c0819:PsiDirectoryNode" />
               <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="userservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-application" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="userservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bank-application" type="b2602c69:ProjectViewProjectNode" />
@@ -579,10 +676,11 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/otunckaya/Desktop/JavaProject/bank-application/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546735431538" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546883141537" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2045977" />
@@ -590,26 +688,29 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qwerty.mircoservices.userservice.web" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.qwerty.microservices.transactionrevservice" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\netflix-zuul-gateway" />
+      <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service\src\main\java\com\qwerty\mircoservices\userservice\web" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\java\com\qwerty\microservices\userservicefront\secuirty" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\java\com\qwerty\microservices\userservicefront" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\resources" />
-      <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\java\com\qwerty\microservices\userservicefront\web" />
-      <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\java\com\qwerty\microservices\userservicefront\ouathSecurity" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.qwerty.microservice.transactionservice.controller" />
       <recent name="com.qwerty.microservice.transactionservice.controller.proxy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\resources\WEB-INF" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\resources" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service-front\src\main\java\com\qwerty\microservices\userservicefront\web" />
       <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application\user-service\src\main\java\com\qwerty\mircoservices\userservice\oauthSecurity" />
-      <recent name="C:\Users\tyigi\Desktop\Java Project\bank-application" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -840,7 +941,7 @@
       <workItem from="1545855227901" duration="2743000" />
       <workItem from="1545909454359" duration="16561000" />
       <workItem from="1546530013844" duration="16417000" />
-      <workItem from="1546685886309" duration="21990000" />
+      <workItem from="1546685886309" duration="66656000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1542005801302</created>
@@ -1115,7 +1216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546630883630</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Update #29">
+      <created>1546736095796</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1546736095796</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1151,7 +1259,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="464117000" />
+    <option name="totallyTimeSpent" value="508783000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1163,7 +1271,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="8" y="0" width="1534" height="823" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -1171,7 +1280,7 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.31342283" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.31682497" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="1" weight="0.3286119" />
@@ -1189,7 +1298,7 @@
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.3286119" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.8147651" visible="true" weight="0.39943343" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.8147651" visible="true" weight="0.40955138" />
       <window_info anchor="right" id="Bean Validation" order="0" weight="0.3295302" />
       <window_info anchor="right" id="Maven" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -1236,174 +1345,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update #29" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/oauthSecurity/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/oauthSecurity/WebAppIntializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-crypto/5.1.2.RELEASE/spring-security-crypto-5.1.2.RELEASE.jar!/org/springframework/security/crypto/password/PasswordEncoder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/UserServiceFrontApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/SecurityWebAppInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/ResourceServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="26" column="100" selection-start-line="26" selection-start-column="95" selection-end-line="26" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/WebAppIntializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/AuthorizationServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/ouathSecurity/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/resources/WEB-INF/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="77" column="57" lean-forward="true" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/TodoHardcodedService.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtTokenResponse.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtTokenRequest.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtInMemoryUserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtTokenAuthorizationOncePerRequestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtTokenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtUnAuthorizedResponseAuthenticationEntryPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JwtUserDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/JWTWebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -1431,76 +1372,6 @@
     <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/BcyryptEncoderTest.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtAuthenticationRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="77" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtTokenResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/AuthenticationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtTokenRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtInMemoryUserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtTokenAuthorizationOncePerRequestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtTokenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-952">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUnAuthorizedResponseAuthenticationEntryPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JWTWebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUserDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service-front/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1518,34 +1389,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/domain/repository/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1173">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
-          <folding>
-            <element signature="e#1251#1283#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1570,34 +1417,319 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/domain/User.java">
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-641">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java">
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1092">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="-681">
+          <folding>
+            <element signature="e#0#2091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/service/serviceImpl/UserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/domain/repository/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netflix-zuul-gateway/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netflix-zuul-gateway/.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecretKeyProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/service/serviceImpl/TokenBlackListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/AuthenticationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtAuthenticationRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtTokenRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/resource/JwtTokenResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtTokenAuthorizationOncePerRequestFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtInMemoryUserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUserDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-562">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtUnAuthorizedResponseAuthenticationEntryPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JwtTokenUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/repository/AccountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/service/serviceImpl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding>
+            <element signature="e#3742#3743#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/web/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/com/qwerty/microservices/accountservice/domain/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.1.RELEASE/spring-security-web-5.1.1.RELEASE.jar!/org/springframework/security/web/access/channel/ChannelProcessingFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/MyServletRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/JsonToUrlEncodedAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transaction-pack-service/src/main/java/com/qwerty/microservices/transactionpackservice/web/TransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/web/GeneralController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/UserServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="44" column="49" lean-forward="true" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+        <state relative-caret-position="119">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/ResourceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service-front/src/main/java/com/qwerty/microservices/userservicefront/secuirty/jwt/JWTWebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/AuthorizationConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/qwerty/mircoservices/userservice/security/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="100" column="5" selection-start-line="100" selection-start-column="3" selection-end-line="116" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

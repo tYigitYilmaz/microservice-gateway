@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 @Configuration
@@ -22,24 +23,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-   /* private UserDetailsService userDetailsService;
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
-    public PasswordEncoder getPasswordEncoder() {
-        return passwordEncoder;
-    }
-
-    @Autowired
-    public void setUserDetailsService(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
-    public UserDetailsService getUserDetailsService() {
-        return userDetailsService;
-    }*/
 
     @Autowired
     public UserDetailsService userDetailsService;
@@ -56,9 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/contract/**",
             "/error/**/*",
             "/console/**",
-            "/oauth/**"
-
-
+            "/api/hello",
+            "/api/register",
+            "/authenticate"
     };
 
     @Bean
@@ -72,23 +55,36 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(userDetailsService)
+                .userDetailsService(this.userDetailsService)
                 .passwordEncoder(passwordEncoder);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .cors().disable()
+      /*  http
                 .anonymous().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .antMatchers(PUBLIC_MATCHERS).permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/oauth/token").permitAll()
-                .and().httpBasic().and()
+                .and()
+                .csrf().disable();*/
+        http
+                .authorizeRequests()
+                .antMatchers(PUBLIC_MATCHERS).permitAll()
+                .antMatchers(HttpMethod.OPTIONS, "/oauth/token")
+                .permitAll().anyRequest().authenticated()
+                .and()
                 .csrf().disable();
+
+        http
+                .csrf().disable().cors().disable()
+                .formLogin().failureUrl("/index?error").defaultSuccessUrl("/userFront").loginPage("/index").permitAll()
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/index?logout").deleteCookies("remember-me").permitAll()
+                .and()
+                .rememberMe();
     }
 
     @Override
@@ -97,93 +93,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-//
-//
-//    private Environment env;
-//
-//    //private static final String SALT = "salt"; // Salt should be protected
-//    private static final String[] PUBLIC_MATCHERS = {
-//            "/webjars/**",
-//            "/css/**",
-//            "/js/**",
-//            "/images/**",
-//            "/about/**",
-//            "/contract/**",
-//            "/error/**/*",
-//            "/console/**",
-//            "/api/account/register"
-//};
-//
-//
-//public SecurityConfig (Environment env, UserDetailsService userDetailsService){
-//        this.env = env;
-//        this.userDetailsService = userDetailsService;
-//    }
-//
-//
-//    @Bean
-//    public BCryptPasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
-//    }
-//
-//
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers("/api/v1/signup");
-//    }
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//
-//        http
-//                .authorizeRequests()
-//                .antMatchers(PUBLIC_MATCHERS).
-//                permitAll().anyRequest().authenticated();
-//
-//        http
-//                .csrf().disable().cors().disable()
-//                .formLogin().failureUrl("/index?error").defaultSuccessUrl("/userFront").loginPage("/index").permitAll()
-//                .and()
-//                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/index?logout").deleteCookies("remember-me").permitAll()
-//                .and()
-//                .rememberMe();
-//    }
-//
-//  @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        //auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
-//        auth.userDetailsService(accountSecurityService).passwordEncoder(passwordEncoder());
-//    }
-//
-//
-//    @Bean
-//    public DaoAuthenticationProvider authenticationProvider() {
-//        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-//        provider.setPasswordEncoder( passwordEncoder);
-//        provider.setUserDetailsService( userDetailsService() );
-//        return provider;
-//    }
-//
-//   @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .formLogin().disable() // disable form authentication
-//                .anonymous().disable() // disable anonymous user
-//                .httpBasic().and()
-//                // restricting access to authenticated users
-//                .authorizeRequests().anyRequest().authenticated();
-//    }
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth
-//                .userDetailsService(userDetailsService)
-//                .passwordEncoder(passwordEncoder);
-//    }
-//
-//    @Override
-//    @Bean
-//    public AuthenticationManager authenticationManagerBean() throws Exception {
-//        // provides the default AuthenticationManager as a Bean
-//        return super.authenticationManagerBean();
-//    }
 }

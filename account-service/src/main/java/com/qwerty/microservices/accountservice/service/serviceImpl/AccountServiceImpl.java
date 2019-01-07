@@ -93,4 +93,9 @@ public class AccountServiceImpl implements AccountService {
             accountDao.save(account);
         return null;
     }
+
+    @Override
+    public Account findByAccountNumber(int accountNumber) {
+        return accountDao.findByAccountNumber(accountNumber);
+    }
 }

@@ -1,13 +1,25 @@
 package com.qwerty.mircoservices.userservice.web;
 
 
+import com.qwerty.mircoservices.userservice.domain.User;
+import com.qwerty.mircoservices.userservice.service.serviceImpl.UserDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class GeneralController {
+
+    private UserDetailService userDetailService;
+
+    @Autowired
+    public void setUserDetailService(UserDetailService userDetailService) {
+        this.userDetailService = userDetailService;
+    }
+
 
     @GetMapping("/")
     public RestMsg hello(){
@@ -32,6 +44,14 @@ public class GeneralController {
     public RestMsg helloAdmin(Principal principal){
         return new RestMsg(String.format("Welcome '%s'!", principal.getName()));
     }
+
+    @RequestMapping(value = "/authenticate ",method = RequestMethod.GET)
+    public User authenticationBean(@RequestBody User user){
+        return userDetailService.findUserByUsername(user.getUsername());
+    }
+
+
+
 
     // A helper class to make our web output look nice
     public static class RestMsg {

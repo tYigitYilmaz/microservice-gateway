@@ -16,4 +16,6 @@ public interface AccountService {
 
     Account createAccount(int accountNumber);
 
+    Account findByAccountNumber(int accountNumber);
+
 }

@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,6 +28,8 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Autowired
     private TokenStore tokenStore;
 
+    @Autowired
+    JsonToUrlEncodedAuthenticationFilter jsonFilter;
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
@@ -38,7 +41,13 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
 
    @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.requestMatcher(new OAuthRequestedMatcher())
+
+
+
+        http
+                .csrf()
+                .disable()
+                .requestMatcher(new OAuthRequestedMatcher())
                 .anonymous().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
@@ -46,6 +55,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/api/me").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/api/register").hasAuthority("ROLE_REGISTER")
                 .antMatchers(HttpMethod.OPTIONS, "/oauth/token").permitAll();
+
     }
 
    private static class OAuthRequestedMatcher implements RequestMatcher {

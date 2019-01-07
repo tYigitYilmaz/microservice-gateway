@@ -6,7 +6,9 @@ import com.qwerty.microservices.accountservice.domain.repository.AccountDao;
 import com.qwerty.microservices.accountservice.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -74,6 +76,14 @@ public class AccountController {
     public Account createAccount(
             @RequestBody @Valid Account request) {
         return accountService.createAccount(request.getAccountNumber());
+    }
+
+
+    @RequestMapping(value = "/account",method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Account retriveAccount(
+            @RequestBody @Valid Account request) {
+        return accountService.findByAccountNumber(request.getAccountNumber());
     }
 
     @RequestMapping(value = "/register",method = RequestMethod.POST

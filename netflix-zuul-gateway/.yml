@@ -1,0 +1,20 @@
+bootstrap.yml:
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    application:
+      path: /**
+      serviceId: auth-server
+      sensitive-headers: Cookie,Set-Cookie
+      ignore-security-headers: false
+      ignored-headers: cookie,set-cookie
+
+security:
+  basic:
+    enabled: false
+
+user:
+  path: /user-service/**
+  sensitiveHeaders:
+  serviceId: user-service
