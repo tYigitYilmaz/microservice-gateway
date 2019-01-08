@@ -28,8 +28,6 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Autowired
     private TokenStore tokenStore;
 
-    @Autowired
-    JsonToUrlEncodedAuthenticationFilter jsonFilter;
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
@@ -42,15 +40,11 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
    @Override
     public void configure(HttpSecurity http) throws Exception {
 
-
-
         http
-                .csrf()
-                .disable()
                 .requestMatcher(new OAuthRequestedMatcher())
-                .anonymous().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers("/authenticate").access("hasAnyRole('USER')")
                 .antMatchers("/api/hello").access("hasAnyRole('USER')")
                 .antMatchers("/api/me").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/api/register").hasAuthority("ROLE_REGISTER")

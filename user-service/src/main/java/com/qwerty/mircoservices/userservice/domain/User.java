@@ -1,6 +1,5 @@
 package com.qwerty.mircoservices.userservice.domain;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.security.core.GrantedAuthority;
@@ -31,23 +30,11 @@ public class User implements UserDetails {
     private boolean accountNonExpired, accountNonLocked, credentialsNonExpired, enabled;
 
     public User() {
+        this.accountNonExpired = true;
+        this.accountNonLocked = true;
+        this.credentialsNonExpired = true;
+        this.enabled = true;
     }
-
-    public User(String username, String password, String firstName, String lastName, String email) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-
- /*   @JsonCreator
-    public User(boolean accountNonExpired, boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
-        this.accountNonExpired = accountNonExpired;
-        this.accountNonLocked = accountNonLocked;
-        this.credentialsNonExpired = credentialsNonExpired;
-        this.enabled = enabled;
-    }*/
 
     @Override
     public boolean isAccountNonExpired() {
@@ -81,12 +68,11 @@ public class User implements UserDetails {
         roles.forEach(role -> authorities.add(new SimpleGrantedAuthority(role)));
         return authorities;
     }
-
     @JsonIgnore
     public List<String> getRoles() {
         return roles;
     }
-
+    @JsonIgnore
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }

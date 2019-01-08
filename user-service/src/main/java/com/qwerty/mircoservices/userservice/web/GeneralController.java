@@ -4,6 +4,7 @@ package com.qwerty.mircoservices.userservice.web;
 import com.qwerty.mircoservices.userservice.domain.User;
 import com.qwerty.mircoservices.userservice.service.serviceImpl.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.security.Principal;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class GeneralController {
 
     private UserDetailService userDetailService;
@@ -38,14 +40,14 @@ public class GeneralController {
         return new RestMsg(String.format("Hello '%s'!", username));
     }
 
-    @GetMapping("/api/admin")
+    @GetMapping(value ="/api/admin", produces = "application/json")
     // If a web request asks for the Principal user in
     // the method declaration Spring security will provide it.
     public RestMsg helloAdmin(Principal principal){
         return new RestMsg(String.format("Welcome '%s'!", principal.getName()));
     }
 
-    @RequestMapping(value = "/authenticate ",method = RequestMethod.GET)
+    @RequestMapping(value ="/authenticate",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public User authenticationBean(@RequestBody User user){
         return userDetailService.findUserByUsername(user.getUsername());
     }

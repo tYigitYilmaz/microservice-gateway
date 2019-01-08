@@ -15,7 +15,7 @@ import java.security.Principal;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class AccountController {
 
     private UserDetailService userDetailService;
@@ -27,8 +27,8 @@ public class AccountController {
 
 
 
-    @RequestMapping(value = "/api/register",method = RequestMethod.POST
-            , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+
+    @RequestMapping(value ="/api/register",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> registerAccount(@RequestBody User user) throws AccountException {
         user = userDetailService.register(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
