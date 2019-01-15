@@ -1,5 +1,6 @@
 package com.qwerty.mircoservices.userservice;
 
+import brave.sampler.Sampler;
 import com.qwerty.mircoservices.userservice.domain.Role;
 import com.qwerty.mircoservices.userservice.domain.User;
 import com.qwerty.mircoservices.userservice.service.serviceImpl.UserDetailService;
@@ -30,6 +31,10 @@ public class UserServiceApplication {
         SpringApplication.run(UserServiceApplication.class, args);
     }
 
+    @Bean
+    public Sampler defaultSampler(){
+        return Sampler.ALWAYS_SAMPLE;
+    }
     @Bean
     CommandLineRunner init(UserDetailService userDetailService) {
         return (evt) -> Arrays.asList(
