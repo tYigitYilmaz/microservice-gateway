@@ -17,7 +17,7 @@ import javax.validation.Valid;
 @FeignClient(name = "netflix-zuul-gateway")
 @RibbonClient(name = "netflix-zuul-gateway")
 @Component
-public interface TransactionProxy {
+public interface    TransactionProxy {
 
     @RequestMapping(value ="/transaction-pack-service/transaction",method = RequestMethod.POST
             , consumes = MediaType.APPLICATION_JSON_UTF8_VALUE
